@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'nkwsubfeprojects'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_nkwsubfeprojects_domain_model_project">Project</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.title">Title</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.subtitle">Subtitle</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.acronym">Acronym</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.descr">Description</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.runningtimestart">Running Time (Start)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.runningtimeend">Running Time (End)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.fundingtimestart">Funding Time (Start)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.fundingtimeend">Funding Time (End)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url1">URL 1</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url2">URL 2</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url3">URL 3</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url4">URL 4</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url5">URL 5</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.0">Planned</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.1">Running</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.2">Done</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.3">Running service</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.4">Done and running service</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.5">All</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status">Status</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.notes">Notes</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.internalnotes">Internal Notes</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.funding">Funding</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.leadinstitution">Lead Institution</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.institutions">Institutions</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.keywords">Keywords</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.freekeywords">Free Keywords</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.leadperson">Leading Person</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.person">Person</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.department">Department</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution">Institution</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.title">Title</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.acronym">Acronym</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.descr">Description</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.address">Address (Street, ZIP City, Country)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.url">URL</label>
+			<label index="tx_nkwsubfeprojects_domain_model_keywords">Keywords</label>
+			<label index="tx_nkwsubfeprojects_domain_model_keywords.title">Title</label>
+			<label index="tt_content.list_type_pi1">Project List</label>
+			<label index="tt_content.list_type_pi2">Project Details</label>
+			<label index="tt_content.list_type_pi3">Project Keyword List</label>
+			<label index="tt_content.list_type_pi4">Project Keyword Details</label>
+			<label index="tt_content.list_type_pi5">Project Institution List</label>
+			<label index="tt_content.list_type_pi6">Project Institution Details</label>
+			<label index="flexform.displaytype">Display type</label>
+			<label index="tx_nkwsubfeprojects_images">Images</label>
+            <label index="tx_nkwsubfeprojects_images.image">image</label>
+            <label index="tx_nkwsubfeprojects_images.caption">Caption</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.logo">Logo</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.ehemalige">Former personnel</label>	
+			<label index="tx_nkwsubfeprojects_domain_model_project.blacklisted">Do not show on persons' detailpages</label>
+				</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_nkwsubfeprojects_domain_model_project">Projekt</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.title">Titel</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.subtitle">Untertitel</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.acronym">Akronym</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.descr">Beschreibung</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.runningtimestart">Laufzeit (Start)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.runningtimeend">Laufzeit (Ende)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.fundingtimestart">Förderzeitpunkt (Start)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.fundingtimeend">Förderzeitpunkt (Ende)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url1">URL 1</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url2">URL 2</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url3">URL 3</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url4">URL 4</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.url5">URL 5</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.0">Geplant</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.1">Laufend</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.2">Abgeschlossen</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.3">Laufender Service</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.4">Abgeschlossen und laufender Dienst</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status.I.5">Alle</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.status">Status</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.notes">Notizen</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.internalnotes">Interne Notizen</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.funding">Förderer</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.leadinstitution">Leitende Institution</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.institutions">Institutionen</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.keywords">Schlagwörter</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.freekeywords">Freie Schlagworte</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.leadperson">Leitende Personen</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.person">Person</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.department">Abteilung</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution">Institution</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.title">Titel</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.acronym">Akronym</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.descr">Beschreibung</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.address">Adresse (Strasse, PLZ Ort, Land)</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.url">URL</label>
+			<label index="tx_nkwsubfeprojects_domain_model_keywords">Schlagwörter</label>
+			<label index="tx_nkwsubfeprojects_domain_model_keywords.title">Titel</label>
+			<label index="tt_content.list_type_pi1">Auflistung von Projekten</label>
+			<label index="tt_content.list_type_pi2">Details eines Projekts</label>
+			<label index="tt_content.list_type_pi3">Projektschlagwörterliste</label>
+			<label index="tt_content.list_type_pi4">Projektchlagwortdetails</label>
+			<label index="tt_content.list_type_pi5">Projektinstitutionenliste</label>
+			<label index="tt_content.list_type_pi6">Projektinstitutionendetails</label>
+			<label index="flexform.displaytype">Anzeigetyp</label>
+			<label index="tx_nkwsubfeprojects_images">Images</label>
+            <label index="tx_nkwsubfeprojects_images.image">image</label>
+            <label index="tx_nkwsubfeprojects_images.caption">Caption</label>
+			<label index="tx_nkwsubfeprojects_domain_model_institution.logo">Logo</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.ehemalige">Ehemalige Mitarbeiter FE</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.blacklisted">Keine Anzeige auf Personendetailseite</label>
+		</languageKey>
+	</data>
+</T3locallang>

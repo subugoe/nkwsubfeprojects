@@ -1,0 +1,6 @@
+{namespace sub=Tx_Nkwsubfeprojects_ViewHelpers}
+
+<div id="infocontent">
+	<h2><f:translate key="similarKeywords" /></h2>
+	<sub:widget.similarKeywords objects="{projects}" exclude="{keyword.uid}" configuration="{titleField: 'title', linkObject:'keyword', linkAction:'detail', linkController:'Keywords', linkPluginName:'pi4'}" />
+</div>

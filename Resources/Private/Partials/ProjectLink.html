@@ -1,0 +1,10 @@
+<ul class="list">
+	<f:for each="{projects}" as="project">
+		<li><f:link.action action="detail" controller="Project" pluginName="pi2" pageUid="1483" arguments="{project: project}">{project.title}<f:if condition="{project.acronym}">
+			<f:then>
+				({project.acronym})
+			</f:then>
+		</f:if></f:link.action><br />
+		{project.subtitle}</li>
+	</f:for>
+</ul>

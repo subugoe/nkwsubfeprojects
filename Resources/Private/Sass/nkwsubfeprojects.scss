@@ -1,0 +1,45 @@
+//$Id: nkwsubfeprojects.scss 1689 2012-02-23 13:56:57Z pfennigstorf $
+@import "compass";
+
+$width: 555px;
+
+.tx-nkwsubfeprojects {
+	width: 102.63157895%;
+	dd {
+		background-image: url('/typo3conf/ext/tmpl_sub/Resources/Public/Img/bullet.png');
+		padding-left: 12px;
+		line-height: 1.7em;
+		background-repeat: no-repeat;
+		margin-left: 8px;
+		background-position-y: 23%;
+	}
+	dt {
+		color: #626262;
+		margin: 10px 0;
+	}
+	ul.list {
+		width: $width - 10px;
+	}
+	.bodytext {
+		 width: $width
+	 }
+	.letterNavi {
+		li:hover {
+			text-shadow: 2px 2px 5px #999;
+		}
+		span.pipe {
+			color: #dedede;
+		}
+		a {
+			text-decoration: none!important;
+			border-bottom: 0!important;
+		}
+	}
+	#infocontent {
+		width: 25.625%;
+	}
+	.subprojects-main {
+		width: 70%;
+		float: left;
+	}
+}

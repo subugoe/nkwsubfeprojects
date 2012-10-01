@@ -1,0 +1,54 @@
+<aside id="infocontent">
+	<h6><f:translate key="facts"/></h6>
+	<ul>
+		<li>
+			<f:translate key="state"/>: <f:translate key="status_{project.status}_0"/>
+		</li>
+		<li>
+			<f:translate key="runningtime"/>: <f:format.date format="{f:translate(key:'dateFormat')}">@{project.runningtimestart}</f:format.date>&nbsp;-&nbsp;<f:format.date format="{f:translate(key:'dateFormat')}">@{project.runningtimeend}</f:format.date>
+		</li>
+	</ul>
+
+	<f:if condition="{project.keywords}">
+		<f:then>
+
+			<h6><f:translate key="keywords"/></h6>
+			<ul>
+				<f:for each="{project.keywords}" as="keyword">
+					<li>
+						<f:link.action action="detail" controller="Keywords" pluginName="pi4" arguments="{keyword: keyword}">{keyword.title}
+						</f:link.action>
+					</li>
+				</f:for>
+			</ul>
+
+		</f:then>
+	</f:if>
+	<f:if condition="{project.fundingtimestart} > 0}">
+		<f:then>
+
+			<h6><f:translate key="fundinghead"/></h6>
+			<ul>
+				<li>
+					<f:translate key="fundingtime"/>
+					<f:format.date format="{f:translate(key:'dateFormat')}">@{project.fundingtimestart}</f:format.date>&nbsp;-&nbsp;<f:format.date format="{f:translate(key:'dateFormat')}">@{project.fundingtimeend}</f:format.date>
+				</li>
+				<f:if condition="{project.funding}">
+					<f:then>
+						<f:for each="{project.funding}" as="institution">
+							<li>
+								<f:link.action action="detail" controller="Institution" pluginName="pi6" arguments="{institution: institution}">{institution.title}
+									<f:if condition="{institution.logo}">
+										<f:then>
+											<f:image src="uploads/tx_nkwsubfeprojects/{institution.logo}" alt="Logo {institution.title}"/>
+										</f:then>
+									</f:if>
+								</f:link.action>
+							</li>
+						</f:for>
+					</f:then>
+				</f:if>
+			</ul>
+		</f:then>
+	</f:if>
+</aside>

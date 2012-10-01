@@ -1,0 +1,41 @@
+plugin.tx_nkwsubfeprojects {
+	features {
+		skipDefaultArguments = 1
+	}
+	persistence {
+		classes {
+			Tx_Nkwsubfeprojects_Domain_Model_Person {
+				mapping {
+					tableName = tt_address
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Person
+					columns {
+						first_name = firstName
+						last_name = lastName
+						title = title
+					}
+				}
+			}
+			Tx_Nkwsubfeprojects_Domain_Model_Group {
+				mapping {
+					tableName = tt_address_group
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Group
+					columns {
+						title = title
+					}
+				}
+			}
+			Tx_Nkwsubfeprojects_Domain_Model_Project {
+				mapping {
+					tableName = tx_nkwsubfeprojects_domain_model_project
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Project
+					columns {
+						title = title
+					}
+				}
+			}
+		}
+	}
+	view {
+		defaultPid = auto
+	}
+}

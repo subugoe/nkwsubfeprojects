@@ -1,0 +1,15 @@
+{namespace sub=Tx_TmplSub_ViewHelpers}
+
+<f:layout name="Main" />
+<f:section name="content">
+
+	<f:if condition="{projects}">
+		<f:then>
+				<sub:widget.az objects="{projects}" configuration="{titleField: 'title', linkObject:'project', linkAction:'detail', linkController:'Project', linkPluginName:'pi2' linkExtensionName:'nkwsubfeprojects' }" />
+		</f:then>
+		<f:else>
+			<f:format.html><f:translate key="noProjects" /></f:format.html>
+		</f:else>
+	</f:if>
+
+</f:section>

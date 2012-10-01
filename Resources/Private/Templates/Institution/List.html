@@ -1,0 +1,7 @@
+{namespace sub=Tx_TmplSub_ViewHelpers}
+
+<f:layout name="Main" />
+
+<f:section name="content">
+	<sub:widget.az objects="{institutions}" configuration="{titleField: 'title', linkObject:'institution', linkAction:'detail', linkController:'Institution', linkPluginName:'pi6', linkExtensionName:'nkwsubfeprojects'}" />
+</f:section>

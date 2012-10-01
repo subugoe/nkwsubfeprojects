@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:layout name="Main" />
+
+<f:section name="content">
+	<div class="subprojects-main">
+		<h1>{header}
+			<f:if condition="{project.acronym}">
+				<f:then>
+					({project.acronym})
+				</f:then>
+			</f:if>
+		</h1>
+		<f:format.html>{project.subtitle}</f:format.html>
+
+		<f:if condition="{project.url1}">
+			<f:then>
+				<f:format.html><f:link.external uri="{project.url1}">{project.url1}</f:link.external></f:format.html>
+			</f:then>
+		</f:if>
+		<f:if condition="{project.url2}">
+			<f:then>
+				<f:format.html><f:link.external uri="{project.url2}">{project.url2}</f:link.external></f:format.html>
+			</f:then>
+		</f:if>
+		<f:if condition="{project.url3}">
+			<f:then>
+				<f:format.html><f:link.external uri="{project.url3}">{project.url3}</f:link.external></f:format.html>
+			</f:then>
+		</f:if>
+		<f:if condition="{project.url4}">
+			<f:then>
+				<f:format.html><f:link.external uri="{project.url4}">{project.url4}</f:link.external></f:format.html>
+			</f:then>
+		</f:if>
+		<f:if condition="{project.url5}">
+			<f:then>
+				<f:format.html><f:link.external uri="{project.url5}">{project.url5}</f:link.external></f:format.html>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.descr}">
+			<f:then>
+				<f:format.html>{project.descr}</f:format.html>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.leadinstitution}">
+			<f:then>
+				<h2>
+					<f:translate key="leadcoordination"/>
+				</h2>
+				<f:render partial="Institution" arguments="{institutions: project.leadinstitution}"/>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.institutions}">
+			<f:then>
+				<h2>
+					<f:translate key="affiliates"/>
+				</h2>
+				<f:render partial="Institution" arguments="{institutions: project.institutions}"/>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.leadperson}">
+			<f:then>
+				<h2>
+					<f:translate key="leadsub"/>
+				</h2>
+				<f:render partial="Person" arguments="{persons: project.leadperson}"/>
+
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.person}">
+			<f:then>
+				<h2>
+					<f:translate key="personnelsub"/>
+				</h2>
+				<f:render partial="Person" arguments="{persons: project.person}"/>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.department}">
+			<f:then>
+				<h2>
+					<f:translate key="asociateddepartmentsunits"/>
+				</h2>
+				<f:render partial="Group" arguments="{groups: project.department}"/>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{project.ehemalige}">
+			<f:then>
+				<h2>
+					<f:translate key="formerpersonnel"/>
+				</h2>
+				<f:format.html>{project.ehemalige}</f:format.html>
+			</f:then>
+		</f:if>
+	</div>
+	<f:render partial="ProjectSidebar" arguments="{_all}"/>
+
+</f:section>
+</html>

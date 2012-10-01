@@ -1,0 +1,5 @@
+<ul>
+	<f:for each="{titles}" as="keyword" key="uid">
+		<li><f:link.action action="{linkAction}" controller="{linkController}" arguments="{keyword: uid}" pluginName="{linkPluginName}">{keyword}</f:link.action></li>
+	</f:for>
+</ul>

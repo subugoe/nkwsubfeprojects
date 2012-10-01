@@ -1,0 +1,10 @@
+<ul>
+	<f:for each="{institutions}" as="institution">
+		<li><f:link.action action="detail" controller="Institution" pluginName="pi6" arguments="{institution: institution}">{institution.title}</f:link.action></li>
+		<f:if condition="{institution.logo}">
+			<f:then>
+				<f:image src="uploads/tx_nkwsubfeprojects/{institution.logo}" alt="Logo {institution.title}"/>
+			</f:then>
+		</f:if>
+	</f:for>
+</ul>

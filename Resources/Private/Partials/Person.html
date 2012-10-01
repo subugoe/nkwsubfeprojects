@@ -1,0 +1,5 @@
+<ul>
+	<f:for each="{persons}" as="person">
+		<li><f:link.page pageUid="1476" additionalParams="{tx_nkwsubstaff: {staff_id: person}}">{person.title} {person.firstName} {person.lastName}</f:link.page></li>
+	</f:for>
+</ul>
