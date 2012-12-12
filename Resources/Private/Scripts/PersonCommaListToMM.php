@@ -26,9 +26,7 @@ while ($row = mysqli_fetch_object($query)) {
 foreach ($personList as $key => $val) {
 
 	$werte = '';
-
 	$i = 0;
-
 	foreach ($val as $value) {
 		$insert = "INSERT INTO tx_nkwsubfeprojects_person_tt_address_mm (uid_local, uid_foreign) VALUES (" . $key . ", " . $value .")";
 		$query = $db->query($insert);

@@ -79,5 +79,5 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 		)
 );
 
-$TYPO3_CONF_VARS['FE']['eID_include']['locfix'] = 'EXT:nkwsubfeprojects/Resources/Private/Scripts/LocalizationFixer.php';
+//$TYPO3_CONF_VARS['FE']['eID_include']['locfix'] = 'EXT:nkwsubfeprojects/Resources/Private/Scripts/LocalizationFixer.php';
 ?>
