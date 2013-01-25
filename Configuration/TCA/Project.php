@@ -293,35 +293,49 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
 		'leadperson' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.leadperson',
-			'config'  => array(
+			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tt_address',
+				'foreign_table_where' => ' ORDER BY tt_address.last_name ASC',
 				'size' => 5,
 				'autoSizeMax' => 25,
 				'multiple' => 0,
 				'minitems' => 0,
 				'maxitems' => 99,
 				'MM' => 'tx_nkwsubfeprojects_leadperson_tt_address_mm',
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+						'maxItemsInResultList' => 25,
+					),
+				),
 			)
 		),
 		'person' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.person',
-			'config'  => array(
+			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tt_address',
+				'foreign_table_where' => ' ORDER BY tt_address.last_name ASC',
 				'size' => 5,
 				'autoSizeMax' => 25,
 				'multiple' => 0,
 				'minitems' => 0,
 				'maxitems' => 99,
 				'MM' => 'tx_nkwsubfeprojects_person_tt_address_mm',
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+						'maxItemsInResultList' => 25,
+					),
+				),
 			)
 		),
 		'department' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.department',
-			'config'  => array(
+			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tt_address_group',
 				'foreign_table_where' => ' ORDER BY tt_address_group.title ASC',
@@ -331,6 +345,12 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
 				'minitems' => 0,
 				'maxitems' => 99,
 				'MM' => 'tx_nkwsubfeprojects_group_tt_address_mm',
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+						'maxItemsInResultList' => 25,
+					),
+				),
 			)
 		),
 		'blacklisted' => array(
@@ -338,7 +358,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
 			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.blacklisted',
 			'config' => array('type' => 'check', 'default' => '0')
 		),
-		'ehemalige'=>array(
+		'ehemalige' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.ehemalige',
 			'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
