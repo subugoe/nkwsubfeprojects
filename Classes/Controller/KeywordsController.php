@@ -37,10 +37,10 @@ class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_C
 	 * @var Tx_Nkwsubfeprojects_Domain_Repository_KeywordsRepository
 	 * @inject
 	 */
-	protected $keywordsRepostitory;
+	protected $keywordsRepository;
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository $projectRepository
+	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository
 	 * @inject
 	 */
 	protected $projectRepository;
