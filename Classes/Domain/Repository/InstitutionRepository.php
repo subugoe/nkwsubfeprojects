@@ -5,7 +5,7 @@
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,8 +28,7 @@
 /**
  * Description
  *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: InstitutionRepository.php 1684 2012-02-21 15:50:49Z pfennigstorf $
+ * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
 class Tx_Nkwsubfeprojects_Domain_Repository_InstitutionRepository extends Tx_Extbase_Persistence_Repository {
 

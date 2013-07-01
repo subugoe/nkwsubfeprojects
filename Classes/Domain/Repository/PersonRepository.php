@@ -5,7 +5,7 @@
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,8 +28,7 @@
 /**
  * Repository Class for Persons as mapped by tt_address
  *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: PersonRepository.php 1689 2012-02-23 13:56:57Z pfennigstorf $
+ * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
 class Tx_Nkwsubfeprojects_Domain_Repository_PersonRepository extends Tx_Extbase_Persistence_Repository {
 

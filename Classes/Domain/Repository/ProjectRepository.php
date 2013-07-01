@@ -5,7 +5,7 @@
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,8 +28,7 @@
 /**
  * Repository Class for Projects
  *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: ProjectRepository.php 1684 2012-02-21 15:50:49Z pfennigstorf $
+ * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
 class Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository extends Tx_Extbase_Persistence_Repository {
 
@@ -49,9 +48,9 @@ class Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository extends Tx_Extbase
 
 		$result = $query->matching(
 					$query->logicalOr(
-						$query->contains('funding', $institution),
-						$query->contains('leadinstitution', $institution),
-						$query->contains('institutions', $institution)
+									$query->contains('funding', $institution),
+									$query->contains('leadinstitution', $institution),
+									$query->contains('institutions', $institution)
 					)
 				)->execute();
 
@@ -69,7 +68,7 @@ class Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository extends Tx_Extbase
 
 		$result = $query->matching(
 					$query->logicalOr(
-						$query->contains('keywords', $keyword)
+									$query->contains('keywords', $keyword)
 					)
 				)->execute();
 
