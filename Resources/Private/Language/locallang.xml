@@ -18,9 +18,9 @@
 			<label index="fundinghead">Funding</label>
 			<label index="leadcoordination">Lead/Coordination</label>
 			<label index="affiliates">Affiliates</label>
-			<label index="leadsub">Leading Person (SUBUGOE)</label>
-			<label index="personnelsub">Personnel (SUBUGOE)</label>
-			<label index="asociateddepartmentsunits">Associated departments/units (SUBUGOE)</label>
+			<label index="leadsub">Project board at the SUB Göttingen</label>
+			<label index="personnelsub">Project staff at the SUB Göttingen</label>
+			<label index="asociateddepartmentsunits">SUB Göttingen departments / units involved in the project</label>
 			<label index="state">Status</label>
 			<label index="status_0_0">Planned</label>
 			<label index="status_1_0">Running</label>
@@ -28,7 +28,7 @@
 			<label index="status_3_0">Running Service</label>
 			<label index="status_4_0">Done an running Service</label>
 			<label index="invalidproject">Unknown Project</label>
-			<label index="formerpersonnel">Former Personnel (SUBUGOE)</label>
+			<label index="formerpersonnel">Former project staff of the SUB Göttingen</label>
 			<label index="projects">Projects</label>
 			<label index="projectDetails">Project details</label>
 			<label index="address">Address</label>
