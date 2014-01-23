@@ -29,7 +29,6 @@
  * Controller for Keywords
  *
  * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: KeywordsController.php 1689 2012-02-23 13:56:57Z pfennigstorf $
  */
 class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_Controller_ActionController {
 
@@ -49,7 +48,7 @@ class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_C
 	 * List all Keywords
 	 */
 	public function listAction() {
-		$keywords = $this->keywordsRepostitory->findAll();
+		$keywords = $this->keywordsRepository->findAll();
 		$this->view->assign('keywords', $keywords);
 	}
 
