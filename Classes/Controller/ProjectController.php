@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Controller;
 
 /* * *************************************************************
  *  Copyright notice
@@ -26,15 +27,12 @@
  * ************************************************************* */
 
 /**
- * Description
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: ProjectController.php 1689 2012-02-23 13:56:57Z pfennigstorf $
+ * Project Controller
  */
-class Tx_Nkwsubfeprojects_Controller_ProjectController extends Tx_Extbase_MVC_Controller_ActionController {
+class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
 	 * @inject
 	 */
 	protected $projectRepostitory;
@@ -58,9 +56,9 @@ class Tx_Nkwsubfeprojects_Controller_ProjectController extends Tx_Extbase_MVC_Co
 	/**
 	 * List Project Details
 	 *
-	 * @param Tx_Nkwsubfeprojects_Domain_Model_Project $project
+	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Project $project
 	 */
-	public function detailAction(Tx_Nkwsubfeprojects_Domain_Model_Project $project) {
+	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Project $project) {
 
 		$newHeader = $project->getTitle() . ' - ' . $this->configurationManager->getContentObject()->data['header'];
 			// Assign new pageTitle

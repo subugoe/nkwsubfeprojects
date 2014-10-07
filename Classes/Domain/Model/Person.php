@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 
 /* * *************************************************************
  *  Copyright notice
@@ -27,11 +28,8 @@
 
 /**
  * Model for Persons as mapped by tt_address table
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: Person.php 1684 2012-02-21 15:50:49Z pfennigstorf $
  */
-class Tx_Nkwsubfeprojects_Domain_Model_Person extends Tx_Extbase_DomainObject_AbstractEntity {
+class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var string

@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 
 /* * *************************************************************
  *  Copyright notice
@@ -27,20 +28,18 @@
 
 /**
  * Repository Class for Projects
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
-class Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository extends Tx_Extbase_Persistence_Repository {
+class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	protected $defaultOrderings = array(
-		'title' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
+		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
 	);
 
 	/**
 	 * Find all Institutions that are related to a project
 	 *
 	 * @param $institution
-	 * @return Tx_Extbase_Persistence_QueryInterface
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findAllInstitutions($institution) {
 
@@ -61,7 +60,7 @@ class Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository extends Tx_Extbase
 	 * Find all Projects by a specified Keyword
 	 *
 	 * @param $keyword
-	 * @return array|Tx_Extbase_Persistence_QueryResultInterface
+	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findProjectByKeywords($keyword) {
 		$query = $this->createQuery();

@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 
 /* * *************************************************************
  *  Copyright notice
@@ -26,12 +27,9 @@
  * ************************************************************* */
 
 /**
- * Description
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: Institution.php 1684 2012-02-21 15:50:49Z pfennigstorf $
+ * Institution Model
  */
-class Tx_Nkwsubfeprojects_Domain_Model_Institution extends Tx_Extbase_DomainObject_AbstractEntity {
+class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var string

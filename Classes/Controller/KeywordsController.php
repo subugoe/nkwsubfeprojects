@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Controller;
 
 /* * *************************************************************
  *  Copyright notice
@@ -27,19 +28,17 @@
 
 /**
  * Controller for Keywords
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
  */
-class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_Controller_ActionController {
+class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_KeywordsRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository
 	 * @inject
 	 */
 	protected $keywordsRepository;
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
 	 * @inject
 	 */
 	protected $projectRepository;
@@ -55,9 +54,9 @@ class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_C
 	/**
 	 * Get details and projects for a specified Keyword
 	 *
-	 * @param Tx_Nkwsubfeprojects_Domain_Model_Keywords $keyword
+	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword
 	 */
-	public function detailAction(Tx_Nkwsubfeprojects_Domain_Model_Keywords $keyword) {
+	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword) {
 
 		$newHeader = $this->configurationManager->getContentObject()->data['header'] . ' ' . $keyword->getTitle();
 

@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 
 /* * *************************************************************
  *  Copyright notice
@@ -27,11 +28,8 @@
 
 /**
  * Model for Project Keywords
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: Keywords.php 1684 2012-02-21 15:50:49Z pfennigstorf $
  */
-class Tx_Nkwsubfeprojects_Domain_Model_Keywords extends Tx_Extbase_DomainObject_AbstractEntity {
+class Keywords extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var string

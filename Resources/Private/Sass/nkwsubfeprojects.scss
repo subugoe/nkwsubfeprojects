@@ -12,6 +12,7 @@
 		margin: 10px 0;
 	}
 	.letterNavi {
+		@extend .pagination;
 		li:hover {
 			text-shadow: 2px 2px 5px #999;
 		}

@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 
 /* * *************************************************************
  *  Copyright notice
@@ -26,12 +27,9 @@
  * ************************************************************* */
 
 /**
- * Description
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: Project.php 1813 2012-04-05 08:33:25Z pfennigstorf $
+ * Project model
  */
-class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_AbstractEntity {
+class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var string
@@ -114,22 +112,22 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	protected $internalnotes;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution> $funding
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution> $funding
 	 */
 	protected $funding;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution> $leadinstitution
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution> $leadinstitution
 	 */
 	protected $leadinstitution;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution> $institutions
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution> $institutions
 	 */
 	protected $institutions;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Keywords> $keywords
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords> $keywords
 	 */
 	protected $keywords;
 
@@ -139,17 +137,17 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	protected $freekeywords;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Person> $leadperson
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $leadperson
 	 */
 	protected $leadperson;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Person> $person
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $person
 	 */
 	protected $person;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Group> $department
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Group> $department
 	 */
 	protected $department;
 
@@ -185,7 +183,7 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	 */
 	protected function initStorageObjects() {
 
-		$this->schulungTermine = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->schulungTermine = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
@@ -217,14 +215,14 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	}
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Group> $department
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Group> $department
 	 */
 	public function setDepartment($department) {
 		$this->department = $department;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Group>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Group>
 	 */
 	public function getDepartment() {
 		return $this->department;
@@ -273,14 +271,14 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	}
 
 	/**
-	 * @param string Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution> $funding
+	 * @param string \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution> $funding
 	 */
 	public function setFunding($funding) {
 		$this->funding = $funding;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
 	 */
 	public function getFunding() {
 		return $this->funding;
@@ -329,14 +327,14 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	}
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution> $institutions
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution> $institutions
 	 */
 	public function setInstitutions($institutions) {
 		$this->institutions = $institutions;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
 	 */
 	public function getInstitutions() {
 		return $this->institutions;
@@ -357,42 +355,42 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	}
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Keywords> $keywords
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords> $keywords
 	 */
 	public function setKeywords($keywords) {
 		$this->keywords = $keywords;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Keywords>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords>
 	 */
 	public function getKeywords() {
 		return $this->keywords;
 	}
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution> $leadinstitution
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution> $leadinstitution
 	 */
 	public function setLeadinstitution($leadinstitution) {
 		$this->leadinstitution = $leadinstitution;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Institution>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
 	 */
 	public function getLeadinstitution() {
 		return $this->leadinstitution;
 	}
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Person> $leadperson
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $leadperson
 	 */
 	public function setLeadperson($leadperson) {
 		$this->leadperson = $leadperson;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Person>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person>
 	 */
 	public function getLeadperson() {
 		return $this->leadperson;
@@ -413,14 +411,14 @@ class Tx_Nkwsubfeprojects_Domain_Model_Project extends Tx_Extbase_DomainObject_A
 	}
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Person> $person
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $person
 	 */
 	public function setPerson($person) {
 		$this->person = $person;
 	}
 
 	/**
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Nkwsubfeprojects_Domain_Model_Person>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person>
 	 */
 	public function getPerson() {
 		return $this->person;

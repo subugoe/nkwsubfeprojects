@@ -1,5 +1,5 @@
 <?php
-
+namespace Subugoe\Nkwsubfeprojects\Controller;
 /* * *************************************************************
  *  Copyright notice
  *
@@ -27,20 +27,17 @@
 
 /**
  * Controller for Institution Data
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: InstitutionController.php 1689 2012-02-23 13:56:57Z pfennigstorf $
  */
-class Tx_Nkwsubfeprojects_Controller_InstitutionController extends Tx_Extbase_MVC_Controller_ActionController {
+class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_InstitutionRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository
 	 * @inject
 	 */
 	protected $institutionRepostitory;
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
 	 * @inject
 	 */
 	protected $projectRepository;
@@ -54,9 +51,9 @@ class Tx_Nkwsubfeprojects_Controller_InstitutionController extends Tx_Extbase_MV
 	}
 
 	/**
-	 * @param Tx_Nkwsubfeprojects_Domain_Model_Institution $institution
+	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution
 	 */
-	public function detailAction(Tx_Nkwsubfeprojects_Domain_Model_Institution $institution) {
+	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution) {
 
 		$projects = $this->projectRepository->findAllInstitutions($institution);
 
