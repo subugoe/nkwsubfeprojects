@@ -6,8 +6,6 @@
 
 	<f:section name="content">
 
-		<f:render partial="KeywordSidebar" arguments="{_all}" />
-
 		<fed:pageRenderer.setTitle title="{institution.title} - {f:translate(key:'projectDetails')}" />
 
 		<h1>{institution.title}<f:if condition="{institution.acronym}">
@@ -39,6 +37,9 @@
 
 		<h2><f:translate key="projects"/></h2>
 		<f:render partial="ProjectLink" arguments="{projects: projects}" />
+		
+		<f:render partial="KeywordSidebar" arguments="{_all}" />
+
 	</f:section>
 
 </html>
