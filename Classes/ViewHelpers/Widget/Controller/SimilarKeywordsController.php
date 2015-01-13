@@ -59,7 +59,7 @@ class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWid
 	public function initializeAction() {
 		$this->objects = $this->widgetConfiguration['objects'];
 		$this->exclude = $this->widgetConfiguration['exclude'];
-		$this->configuration = \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
+		\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
 	}
 
 	/**

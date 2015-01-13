@@ -31,7 +31,7 @@ namespace Subugoe\Nkwsubfeprojects\ViewHelpers\Widget;
 class SimilarKeywordsViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper {
 
 	/**
-	 * @var \Subugoe\Nkwsubfeprojects\ViewHelpers\Widget\Controller\SimilarKeywordsController;
+	 * @var \Subugoe\Nkwsubfeprojects\ViewHelpers\Widget\Controller\SimilarKeywordsController
 	 * @inject
 	 */
 	protected $controller;

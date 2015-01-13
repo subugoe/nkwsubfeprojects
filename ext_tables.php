@@ -82,7 +82,6 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY title',
-		'searchFields' => 'title_de',
 		'versioningWS' => TRUE,
 		'versioning_followPages' => TRUE,
 		'origUid' => 't3_origuid',
@@ -93,7 +92,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
 		'enablecolumns' => array('disabled' => 'hidden'),
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Institution.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Img/icon_tx_nkwsubfeprojects_domain_model_institution.gif',
-		'searchFields' => 'acronym, title'
+		'searchFields' => 'title_de, acronym, title'
 	)
 );
 $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = array(
@@ -104,7 +103,6 @@ $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = array(
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY title',
-		'searchFields' => 'title',
 		'versioningWS' => TRUE,
 		'versioning_followPages' => TRUE,
 		'origUid' => 't3_origuid',
