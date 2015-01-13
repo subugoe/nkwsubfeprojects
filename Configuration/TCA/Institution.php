@@ -122,4 +122,3 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
 	),
 	'palettes' => array('1' => array('showitem' => ''))
 );
-?>

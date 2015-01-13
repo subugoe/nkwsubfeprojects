@@ -12,12 +12,11 @@
 		margin: 10px 0;
 	}
 	.letterNavi {
-		@extend .pagination;
 		li:hover {
 			text-shadow: 2px 2px 5px #999;
 		}
 		span.pipe {
-			color: #dedede;
+			color: darken('#000000', 20%);
 		}
 		a {
 			text-decoration: none!important;

@@ -86,4 +86,3 @@ $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = array(
 	'types' => array('0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;2-2-2')),
 	'palettes' => array('1' => array('showitem' => ''))
 );
-?>

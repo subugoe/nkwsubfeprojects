@@ -365,4 +365,3 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
 		)
 	),
 );
-?>

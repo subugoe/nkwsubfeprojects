@@ -64,7 +64,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
 		'delete' => 'deleted',
 		'enablecolumns' => array('disabled' => 'hidden'),
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Project.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Img/icon_tx_nkwsubfeprojects_domain_model_project.gif',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_nkwsubfeprojects_domain_model_project.gif',
 		'searchFields' => 'title',
 		'versioningWS' => TRUE,
 		'versioning_followPages' => TRUE,
@@ -91,7 +91,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
 		'delete' => 'deleted',
 		'enablecolumns' => array('disabled' => 'hidden'),
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Institution.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Img/icon_tx_nkwsubfeprojects_domain_model_institution.gif',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_nkwsubfeprojects_domain_model_institution.gif',
 		'searchFields' => 'title_de, acronym, title'
 	)
 );
@@ -112,7 +112,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = array(
 		'delete' => 'deleted',
 		'enablecolumns' => array('disabled' => 'hidden'),
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Keywords.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Img/icon_tx_nkwsubfeprojects_domain_model_keywords.gif',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_nkwsubfeprojects_domain_model_keywords.gif',
 		'searchFields' => 'title'
 	)
 );
