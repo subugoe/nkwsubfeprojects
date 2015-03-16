@@ -6,7 +6,7 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,6 +26,8 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /**
  * Controller for Keywords
  */
@@ -42,6 +44,13 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 * @inject
 	 */
 	protected $projectRepository;
+
+
+	public function initializeAction() {
+		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer->addCssFile(ExtensionManagementUtility::extRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+	}
 
 	/**
 	 * List all Keywords
@@ -62,14 +71,14 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
 		$projects = $this->projectRepository->findProjectByKeywords($keyword);
 		$this->view->assignMultiple(
-			array(
-				'projects' => $projects,
-				'header' => $newHeader,
-				'keyword' => $keyword
-			)
+				array(
+						'projects' => $projects,
+						'header' => $newHeader,
+						'keyword' => $keyword
+				)
 		);
 
-			// Change page title
+		// Change page title
 		$GLOBALS['TSFE']->page['title'] = $newHeader;
 	}
 }

@@ -38,11 +38,11 @@ class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	 */
 	protected $projectRepostitory;
 
-    public function initializeAction() {
-        /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-        $pageRenderer->addCssFile(ExtensionManagementUtility::extRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
-    }
+	public function initializeAction() {
+		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer->addCssFile(ExtensionManagementUtility::extRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+	}
 
 	/**
 	 * List all Projects and link them to a single one
@@ -68,7 +68,7 @@ class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Project $project) {
 
 		$newHeader = $project->getTitle() . ' - ' . $this->configurationManager->getContentObject()->data['header'];
-        // Assign new pageTitle
+		// Assign new pageTitle
 		$GLOBALS['TSFE']->page['title'] = $newHeader;
 
 		$this->view->assign('header', $newHeader);

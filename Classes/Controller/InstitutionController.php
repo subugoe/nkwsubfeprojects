@@ -1,11 +1,12 @@
 <?php
 namespace Subugoe\Nkwsubfeprojects\Controller;
+
 /* * *************************************************************
  *  Copyright notice
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -25,6 +26,8 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /**
  * Controller for Institution Data
  */
@@ -41,6 +44,12 @@ class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	 * @inject
 	 */
 	protected $projectRepository;
+
+	public function initializeAction() {
+		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer->addCssFile(ExtensionManagementUtility::extRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+	}
 
 	/**
 	 * List all Institutions
