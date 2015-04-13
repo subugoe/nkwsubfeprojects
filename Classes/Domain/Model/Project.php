@@ -6,7 +6,7 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -45,6 +45,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var string
 	 */
 	protected $descr;
+
+	/**
+	 * @var int
+	 */
+	protected $fundingsum;
 
 	/**
 	 * @var string
@@ -563,4 +568,19 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function getSubtitle() {
 		return $this->subtitle;
 	}
+
+	/**
+	 * @return int
+	 */
+	public function getFundingsum() {
+		return $this->fundingsum;
+	}
+
+	/**
+	 * @param int $fundingsum
+	 */
+	public function setFundingsum($fundingsum) {
+		$this->fundingsum = $fundingsum;
+	}
+
 }
