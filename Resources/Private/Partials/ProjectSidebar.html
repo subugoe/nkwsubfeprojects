@@ -33,6 +33,9 @@
 					<f:translate key="fundingtime"/>
 					<f:format.date format="{f:translate(key:'dateFormat')}">@{project.fundingtimestart}</f:format.date>&nbsp;-&nbsp;<f:format.date format="{f:translate(key:'dateFormat')}">@{project.fundingtimeend}</f:format.date>
 				</li>
+				<f:if condition="{project.fundingsum}">
+					<li><f:translate key="fundingsum" />: <f:format.currency currencySign="€">{project.fundingsum}</f:format.currency></li>
+				</f:if>
 				<f:if condition="{project.funding}">
 					<f:then>
 						<f:for each="{project.funding}" as="institution">

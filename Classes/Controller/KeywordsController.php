@@ -1,11 +1,12 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Controller;
 
 /* * *************************************************************
  *  Copyright notice
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -25,24 +26,31 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /**
  * Controller for Keywords
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
  */
-class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_Controller_ActionController {
+class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_KeywordsRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository
 	 * @inject
 	 */
 	protected $keywordsRepository;
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
 	 * @inject
 	 */
 	protected $projectRepository;
+
+
+	public function initializeAction() {
+		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+	}
 
 	/**
 	 * List all Keywords
@@ -55,22 +63,22 @@ class Tx_Nkwsubfeprojects_Controller_KeywordsController extends Tx_Extbase_MVC_C
 	/**
 	 * Get details and projects for a specified Keyword
 	 *
-	 * @param Tx_Nkwsubfeprojects_Domain_Model_Keywords $keyword
+	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword
 	 */
-	public function detailAction(Tx_Nkwsubfeprojects_Domain_Model_Keywords $keyword) {
+	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword) {
 
 		$newHeader = $this->configurationManager->getContentObject()->data['header'] . ' ' . $keyword->getTitle();
 
 		$projects = $this->projectRepository->findProjectByKeywords($keyword);
 		$this->view->assignMultiple(
-			array(
-				'projects' => $projects,
-				'header' => $newHeader,
-				'keyword' => $keyword
-			)
+				array(
+						'projects' => $projects,
+						'header' => $newHeader,
+						'keyword' => $keyword
+				)
 		);
 
-			// Change page title
+		// Change page title
 		$GLOBALS['TSFE']->page['title'] = $newHeader;
 	}
 }

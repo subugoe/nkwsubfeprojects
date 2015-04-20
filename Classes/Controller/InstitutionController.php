@@ -1,11 +1,12 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Controller;
 
 /* * *************************************************************
  *  Copyright notice
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -25,25 +26,30 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /**
  * Controller for Institution Data
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- * $Id: InstitutionController.php 1689 2012-02-23 13:56:57Z pfennigstorf $
  */
-class Tx_Nkwsubfeprojects_Controller_InstitutionController extends Tx_Extbase_MVC_Controller_ActionController {
+class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_InstitutionRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository
 	 * @inject
 	 */
 	protected $institutionRepostitory;
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_Domain_Repository_ProjectRepository
+	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
 	 * @inject
 	 */
 	protected $projectRepository;
+
+	public function initializeAction() {
+		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+	}
 
 	/**
 	 * List all Institutions
@@ -54,9 +60,9 @@ class Tx_Nkwsubfeprojects_Controller_InstitutionController extends Tx_Extbase_MV
 	}
 
 	/**
-	 * @param Tx_Nkwsubfeprojects_Domain_Model_Institution $institution
+	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution
 	 */
-	public function detailAction(Tx_Nkwsubfeprojects_Domain_Model_Institution $institution) {
+	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution) {
 
 		$projects = $this->projectRepository->findAllInstitutions($institution);
 

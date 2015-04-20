@@ -1,10 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
-	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
-{namespace fed=Tx_Fed_ViewHelpers}
+<f:layout name="Main" />
 
 	<f:layout name="Main" />
 
 	<f:section name="content">
+
+		<f:render partial="KeywordSidebar" arguments="{_all}" />
 
 		<fed:pageRenderer.setTitle title="{institution.title} - {f:translate(key:'projectDetails')}" />
 
@@ -37,7 +37,7 @@
 
 		<h2><f:translate key="projects"/></h2>
 		<f:render partial="ProjectLink" arguments="{projects: projects}" />
-		
+
 		<f:render partial="KeywordSidebar" arguments="{_all}" />
 
 	</f:section>
