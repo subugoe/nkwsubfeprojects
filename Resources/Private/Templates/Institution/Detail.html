@@ -2,10 +2,6 @@
 
 <f:section name="content">
 
-	<f:render partial="KeywordSidebar" arguments="{_all}" />
-
-	<fed:pageRenderer.setTitle title="{institution.title} - {f:translate(key:'projectDetails')}" />
-
 	<h1>{institution.title}<f:if condition="{institution.acronym}">
 		<f:then>
 			 ({institution.acronym})
