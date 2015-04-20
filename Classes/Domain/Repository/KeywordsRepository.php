@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 
 /* * *************************************************************
  *  Copyright notice
@@ -30,7 +31,7 @@
  *
  * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
-class Tx_Nkwsubfeprojects_Domain_Repository_KeywordsRepository extends Tx_Extbase_Persistence_Repository {
+class KeywordsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * Set default Orderings of Query Results
@@ -38,7 +39,7 @@ class Tx_Nkwsubfeprojects_Domain_Repository_KeywordsRepository extends Tx_Extbas
 	 * @var array
 	 */
 	protected $defaultOrderings = array(
-		'title' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
+		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
 	);
 
 }

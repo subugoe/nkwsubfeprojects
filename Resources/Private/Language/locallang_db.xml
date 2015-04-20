@@ -30,6 +30,7 @@
 			<label index="tx_nkwsubfeprojects_domain_model_project.notes">Notes</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.internalnotes">Internal Notes</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.funding">Funding</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.fundingSum">Funding Amount</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.leadinstitution">Lead Institution</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.institutions">Institutions</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.keywords">Keywords</label>
@@ -53,12 +54,12 @@
 			<label index="tt_content.list_type_pi6">Project Institution Details</label>
 			<label index="flexform.displaytype">Display type</label>
 			<label index="tx_nkwsubfeprojects_images">Images</label>
-            <label index="tx_nkwsubfeprojects_images.image">image</label>
-            <label index="tx_nkwsubfeprojects_images.caption">Caption</label>
+			<label index="tx_nkwsubfeprojects_images.image">image</label>
+			<label index="tx_nkwsubfeprojects_images.caption">Caption</label>
 			<label index="tx_nkwsubfeprojects_domain_model_institution.logo">Logo</label>
-			<label index="tx_nkwsubfeprojects_domain_model_project.ehemalige">Former personnel</label>	
+			<label index="tx_nkwsubfeprojects_domain_model_project.ehemalige">Former personnel</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.blacklisted">Do not show on persons' detailpages</label>
-				</languageKey>
+		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tx_nkwsubfeprojects_domain_model_project">Projekt</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.title">Titel</label>
@@ -84,6 +85,7 @@
 			<label index="tx_nkwsubfeprojects_domain_model_project.notes">Notizen</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.internalnotes">Interne Notizen</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.funding">Förderer</label>
+			<label index="tx_nkwsubfeprojects_domain_model_project.fundingSum">Fördersumme</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.leadinstitution">Leitende Institution</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.institutions">Institutionen</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.keywords">Schlagwörter</label>
@@ -107,8 +109,8 @@
 			<label index="tt_content.list_type_pi6">Projektinstitutionendetails</label>
 			<label index="flexform.displaytype">Anzeigetyp</label>
 			<label index="tx_nkwsubfeprojects_images">Images</label>
-            <label index="tx_nkwsubfeprojects_images.image">image</label>
-            <label index="tx_nkwsubfeprojects_images.caption">Caption</label>
+			<label index="tx_nkwsubfeprojects_images.image">image</label>
+			<label index="tx_nkwsubfeprojects_images.caption">Caption</label>
 			<label index="tx_nkwsubfeprojects_domain_model_institution.logo">Logo</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.ehemalige">Ehemalige Mitarbeiter FE</label>
 			<label index="tx_nkwsubfeprojects_domain_model_project.blacklisted">Keine Anzeige auf Personendetailseite</label>

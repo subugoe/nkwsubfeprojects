@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 
 /* * *************************************************************
  *  Copyright notice
@@ -27,13 +28,11 @@
 
 /**
  * Repository Class for Address Groups as mapped by tt_address
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
-class Tx_Nkwsubfeprojects_Domain_Repository_GroupRepository extends Tx_Extbase_Persistence_Repository {
+class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	protected $defaultOrderings = array(
-		'title' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
+		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
 	);
 
 }

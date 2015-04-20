@@ -43,6 +43,7 @@ CREATE TABLE tx_nkwsubfeprojects_domain_model_project (
 	notes text,
 	internalnotes text,
 	funding text,
+	fundingsum int DEFAULT '0' NOT NULL,
 	leadinstitution text,
 	institutions text,
 	keywords text,

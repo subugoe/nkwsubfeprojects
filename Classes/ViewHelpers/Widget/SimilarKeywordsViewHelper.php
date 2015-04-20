@@ -1,4 +1,6 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\ViewHelpers\Widget;
+
 /***************************************************************
 *  Copyright notice
 *
@@ -24,36 +26,25 @@
 ***************************************************************/
 
 /**
- * @author Ingo Pfennigstorf <i,pfennigstorf@gmail.com>
- * @package Nkwsubfeprojects
- * @subpackage ViewHelpers
+ * Helper for finding similar keywords
  */
-class Tx_Nkwsubfeprojects_ViewHelpers_Widget_SimilarKeywordsViewHelper extends Tx_Fluid_Core_Widget_AbstractWidgetViewHelper {
+class SimilarKeywordsViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper {
 
 	/**
-	 * @var Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_AzController
+	 * @var \Subugoe\Nkwsubfeprojects\ViewHelpers\Widget\Controller\SimilarKeywordsController
+	 * @inject
 	 */
 	protected $controller;
 
-
-	/**
-	 * @param Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_SimilarKeywordsController $controller
-	 */
-	public function injectController(Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_SimilarKeywordsController $controller) {
-		$this->controller = $controller;
-	}
-
 	/**
 	 *
-	 * @param Tx_Extbase_Persistence_QueryResultInterface $objects
+	 * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
 	 * @param int $exclude
 	 * @param array $configuration
 	 * @return string
 	 */
-	public function render(Tx_Extbase_Persistence_QueryResultInterface $objects, $exclude = null, array $configuration = array('titleField' => 'title')) {
+	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, $exclude = null, array $configuration = array('titleField' => 'title')) {
 		return $this->initiateSubRequest();
 	}
 
 }
-
-?>

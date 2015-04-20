@@ -1,4 +1,6 @@
 <?php
+namespace Subugoe\Nkwsubfeprojects\ViewHelpers\Widget\Controller;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -25,12 +27,8 @@
 
 /**
  * Determines and displays similar keywords
- *
- * @author Ingo Pfennigstorf <i.pfennigstorf@gmail.com>
- * @package Nkwsubfeprojects
- * @subpackage ViewHelpers/Widget
  */
-class Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_SimilarKeywordsController extends Tx_Fluid_Core_Widget_AbstractWidgetController {
+class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController {
 
 	/**
 	 * @var array
@@ -44,7 +42,7 @@ class Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_SimilarKeywordsControlle
 	);
 
 	/**
-	 * @var Tx_Extbase_Persistence_QueryResultInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	protected $objects;
 
@@ -61,7 +59,7 @@ class Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_SimilarKeywordsControlle
 	public function initializeAction() {
 		$this->objects = $this->widgetConfiguration['objects'];
 		$this->exclude = $this->widgetConfiguration['exclude'];
-		$this->configuration = t3lib_div::array_merge_recursive_overrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
+		\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
 	}
 
 	/**
@@ -105,5 +103,3 @@ class Tx_Nkwsubfeprojects_ViewHelpers_Widget_Controller_SimilarKeywordsControlle
 		return $key;
 	}
 }
-
-?>

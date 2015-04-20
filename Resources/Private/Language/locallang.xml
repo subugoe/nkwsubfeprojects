@@ -16,6 +16,7 @@
 			<label index="funding">Period</label>
 			<label index="facts">Facts</label>
 			<label index="fundinghead">Funding</label>
+			<label index="fundingsum">Funding Amount</label>
 			<label index="leadcoordination">Lead/Coordination</label>
 			<label index="affiliates">Affiliates</label>
 			<label index="leadsub">Project board at the SUB Göttingen</label>
@@ -44,6 +45,7 @@
 			<label index="keywords">Schlagwörter</label>
 			<label index="keyword">Schlagwort</label>
 			<label index="funding">Förderer</label>
+			<label index="fundingsum">Fördersumme</label>
 			<label index="facts">Fakten</label>
 			<label index="leadcoordination">Leitung / Koordination</label>
 			<label index="affiliates">Partnerinstitutionen</label>
