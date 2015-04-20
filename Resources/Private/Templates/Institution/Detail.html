@@ -1,45 +1,41 @@
 <f:layout name="Main" />
 
-	<f:layout name="Main" />
+<f:section name="content">
 
-	<f:section name="content">
+	<f:render partial="KeywordSidebar" arguments="{_all}" />
 
-		<f:render partial="KeywordSidebar" arguments="{_all}" />
+	<fed:pageRenderer.setTitle title="{institution.title} - {f:translate(key:'projectDetails')}" />
 
-		<fed:pageRenderer.setTitle title="{institution.title} - {f:translate(key:'projectDetails')}" />
+	<h1>{institution.title}<f:if condition="{institution.acronym}">
+		<f:then>
+			 ({institution.acronym})
+		</f:then>
+	</f:if>
+	</h1>
 
-		<h1>{institution.title}<f:if condition="{institution.acronym}">
-			<f:then>
-				 ({institution.acronym})
-			</f:then>
-		</f:if>
-		</h1>
+	<f:if condition="{institution.descr}">
+		<f:then>
+			<f:format.html>{institution.descr}</f:format.html>
+		</f:then>
+	</f:if>
 
-		<f:if condition="{institution.descr}">
-			<f:then>
-				<f:format.html>{institution.descr}</f:format.html>
-			</f:then>
-		</f:if>
+	<f:if condition="{institution.address}">
+		<f:then>
+			<h3><f:translate key="{address}"/></h3>
+			<f:format.html>{institution.address}</f:format.html>
+		</f:then>
+	</f:if>
 
-		<f:if condition="{institution.address}">
-			<f:then>
-				<h3><f:translate key="{address}"/></h3>
-				<f:format.html>{institution.address}</f:format.html>
-			</f:then>
-		</f:if>
-
-		<f:if condition="{institution.url}">
-			<f:then>
-				<f:format.html><f:link.external uri="{institution.url}">{institution.url}</f:link.external></f:format.html>
-			</f:then>
-		</f:if>
+	<f:if condition="{institution.url}">
+		<f:then>
+			<f:format.html><f:link.external uri="{institution.url}">{institution.url}</f:link.external></f:format.html>
+		</f:then>
+	</f:if>
 
 
-		<h2><f:translate key="projects"/></h2>
-		<f:render partial="ProjectLink" arguments="{projects: projects}" />
+	<h2><f:translate key="projects"/></h2>
+	<f:render partial="ProjectLink" arguments="{projects: projects}" />
 
-		<f:render partial="KeywordSidebar" arguments="{_all}" />
+	<f:render partial="KeywordSidebar" arguments="{_all}" />
 
-	</f:section>
-
-</html>
+</f:section>
