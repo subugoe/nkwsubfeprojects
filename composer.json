@@ -1,0 +1,12 @@
+{
+    "name": "subugoe/nkwsubfeprojects",
+    "description": "project listing",
+    "type": "typo3-cms-extension",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Ingo Pfennigstorf",
+            "email": "i.pfennigstorf@gmail.com"
+        }
+    ]
+}
