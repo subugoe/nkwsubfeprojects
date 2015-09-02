@@ -79,7 +79,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
 		),
 		'title' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.title_de',
+			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.title',
 			'config' => array('type' => 'input', 'size' => '30', 'eval' => 'required,trim')
 		),
 		'acronym' => array(
@@ -89,7 +89,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
 		),
 		'descr' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.descr_de',
+			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.descr',
 			'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
 		),
 		'address' => array(

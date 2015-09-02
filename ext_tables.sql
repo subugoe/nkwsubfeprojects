@@ -85,6 +85,7 @@ CREATE TABLE tx_nkwsubfeprojects_domain_model_institution (
 	title varchar(255) DEFAULT '' NOT NULL,
 	acronym varchar(255) DEFAULT '' NOT NULL,
 	address text,
+	descr text,
 	url varchar(255) DEFAULT '' NOT NULL,
 	logo text,
 	PRIMARY KEY (uid),
