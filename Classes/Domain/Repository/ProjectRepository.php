@@ -29,49 +29,52 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 /**
  * Repository Class for Projects
  */
-class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	protected $defaultOrderings = array(
-		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-	);
+    protected $defaultOrderings = [
+        'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+    ];
 
-	/**
-	 * Find all Institutions that are related to a project
-	 *
-	 * @param $institution
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-	 */
-	public function findAllInstitutions($institution) {
+    /**
+     * Find all Institutions that are related to a project
+     *
+     * @param $institution
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findAllInstitutions($institution)
+    {
 
-		$query = $this->createQuery();
+        $query = $this->createQuery();
 
-		$result = $query->matching(
-					$query->logicalOr(
-									$query->contains('funding', $institution),
-									$query->contains('leadinstitution', $institution),
-									$query->contains('institutions', $institution)
-					)
-				)->execute();
+        $result = $query->matching(
+            $query->logicalOr(
+                $query->contains('funding', $institution),
+                $query->contains('leadinstitution', $institution),
+                $query->contains('institutions', $institution)
+            )
+        )->execute();
 
-		return $result;
-	}
+        return $result;
+    }
 
-	/**
-	 * Find all Projects by a specified Keyword
-	 *
-	 * @param $keyword
-	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-	 */
-	public function findProjectByKeywords($keyword) {
-		$query = $this->createQuery();
+    /**
+     * Find all Projects by a specified Keyword
+     *
+     * @param $keyword
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findProjectByKeywords($keyword)
+    {
+        $query = $this->createQuery();
 
-		$result = $query->matching(
-					$query->logicalOr(
-									$query->contains('keywords', $keyword)
-					)
-				)->execute();
+        $result = $query->matching(
+            $query->logicalOr(
+                $query->contains('keywords', $keyword)
+            )
+        )->execute();
 
-		return $result;
-	}
+        return $result;
+    }
 
 }

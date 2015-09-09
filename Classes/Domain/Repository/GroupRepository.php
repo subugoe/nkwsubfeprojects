@@ -29,10 +29,11 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 /**
  * Repository Class for Address Groups as mapped by tt_address
  */
-class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	protected $defaultOrderings = array(
-		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-	);
+    protected $defaultOrderings = [
+        'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+    ];
 
 }

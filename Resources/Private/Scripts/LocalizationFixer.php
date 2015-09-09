@@ -2,62 +2,62 @@
 tslib_eidtools::connectDB();
 
 // mapping fields to their equivalents
-$table = array(
-	'tx_nkwsubfeprojects_institution' => array(
-		'title_de' => 'title_en',
-		'acronym' => 'acronym',
-		'descr_de' => 'descr_en',
-		'address' => 'address',
-		'url' => 'url',
-		'logo' => 'logo'
-	),
-	'tx_nkwsubfeprojects_keywords' => array(
-		'title_de' => 'title_en',
-	),
-	'tx_nkwsubfeprojects_project' => array(
-		'title_de' => 'title_en',
-		'subtitle_de' => 'subtitle_en',
-		'acronym' => 'acronym',
-		'descr_de' => 'descr_en',
-		'runningtimestart' => 'runningtimestart',
-		'runningtimeend' => 'runningtimeend',
-		'fundingtimestart' => 'fundingtimestart',
-		'fundingtimeend' => 'fundingtimeend',
-		'url1' => 'url1',
-		'url2' => 'url1',
-		'url3' => 'url1',
-		'url4' => 'url1',
-		'url5' => 'url1',
-		'status' => 'status',
-		'images' => 'images',
-		'notes_de' => 'notes_en',
-		'internalnotes_de' => 'internalnotes_en',
-		'funding' => 'funding',
-		'leadinstitution' => 'leadinstitution',
-		'institutions' => 'institutions',
-		'keywords' => 'keywords',
-		'freekeywords_de' => 'freekeywords_en',
-		'leadperson' => 'leadperson',
-		'person' => 'person',
-		'department' => 'department',
-		'blacklisted' => 'blacklisted',
-		'ehemalige' => 'ehemalige'
-	)
-);
+$table = [
+    'tx_nkwsubfeprojects_institution' => [
+        'title_de' => 'title_en',
+        'acronym' => 'acronym',
+        'descr_de' => 'descr_en',
+        'address' => 'address',
+        'url' => 'url',
+        'logo' => 'logo'
+    ],
+    'tx_nkwsubfeprojects_keywords' => [
+        'title_de' => 'title_en',
+    ],
+    'tx_nkwsubfeprojects_project' => [
+        'title_de' => 'title_en',
+        'subtitle_de' => 'subtitle_en',
+        'acronym' => 'acronym',
+        'descr_de' => 'descr_en',
+        'runningtimestart' => 'runningtimestart',
+        'runningtimeend' => 'runningtimeend',
+        'fundingtimestart' => 'fundingtimestart',
+        'fundingtimeend' => 'fundingtimeend',
+        'url1' => 'url1',
+        'url2' => 'url1',
+        'url3' => 'url1',
+        'url4' => 'url1',
+        'url5' => 'url1',
+        'status' => 'status',
+        'images' => 'images',
+        'notes_de' => 'notes_en',
+        'internalnotes_de' => 'internalnotes_en',
+        'funding' => 'funding',
+        'leadinstitution' => 'leadinstitution',
+        'institutions' => 'institutions',
+        'keywords' => 'keywords',
+        'freekeywords_de' => 'freekeywords_en',
+        'leadperson' => 'leadperson',
+        'person' => 'person',
+        'department' => 'department',
+        'blacklisted' => 'blacklisted',
+        'ehemalige' => 'ehemalige'
+    ]
+];
 
-$mapping = array();
+$mapping = [];
 
 foreach ($table as $tableName => $mapping) {
 
-	// just for development purposes
-	deleteRecords($tableName);
+    // just for development purposes
+    deleteRecords($tableName);
 
-	// rename tables
-	$tableMap = renameTables($tableName);
+    // rename tables
+    $tableMap = renameTables($tableName);
 
-	fixTable($tableName, $mapping);
+    fixTable($tableName, $mapping);
 
-echo '<hr />';
+    echo '<hr />';
 }
 
 
@@ -66,14 +66,15 @@ echo '<hr />';
  *
  * @param $table
  */
-function renameTables($table) {
+function renameTables($table)
+{
 
-	$originalTable = $table;
+    $originalTable = $table;
 
-	$table = getNewTableNames($originalTable);
-	$query = 'CREATE TABLE ' . $table . ' LIKE ' . $originalTable . ';';
-	$GLOBALS['TYPO3_DB']->sql_query($query);
-	echo $originalTable . ' copied to ' . $table . '<br />';
+    $table = getNewTableNames($originalTable);
+    $query = 'CREATE TABLE ' . $table . ' LIKE ' . $originalTable . ';';
+    $GLOBALS['TYPO3_DB']->sql_query($query);
+    echo $originalTable . ' copied to ' . $table . '<br />';
 
 }
 
@@ -82,93 +83,94 @@ function renameTables($table) {
  * @param $table
  * @param $fieldMapping
  */
-function fixTable($table, $fieldMapping) {
+function fixTable($table, $fieldMapping)
+{
 
-	$newTableName = getNewTableNames($table);
+    $newTableName = getNewTableNames($table);
 
-	// first of all add a 'title'-field to all tables if not existing
-	addFields($newTableName, $fieldMapping);
+    // first of all add a 'title'-field to all tables if not existing
+    addFields($newTableName, $fieldMapping);
 
     $records = 0;
-	$i = 0;
-	do {
-		$abfrage = $GLOBALS['TYPO3_DB']->exec_SELECTQuery(
-			'*',
-			$table,
-			'',
-			'',
-			''
-		);
+    $i = 0;
+    do {
+        $abfrage = $GLOBALS['TYPO3_DB']->exec_SELECTQuery(
+            '*',
+            $table,
+            '',
+            '',
+            ''
+        );
 
-		while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($abfrage)) {
-			$records++;
+        while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($abfrage)) {
+            $records++;
 
-			$loc = array();
-			// Felder die in jeder Tabelle passen
-			$loc['sys_language_uid'] = $i;
-			if ($i === 1) {
-				$loc['l18n_parent'] = $row['uid'];
-				$loc['t3_origuid'] = $row['uid'];
-			} else {
-				$loc['uid'] = $row['uid'];
-			}
-			$loc['tstamp'] = time();
-			$loc['crdate'] = time();
-			$loc['cruser_id'] = $row['cruser_id'];
-			$loc['pid'] = $row['pid'];
-			$loc['deleted'] = $row['deleted'];
-			$loc['hidden'] = $row['hidden'];
-			$loc['t3ver_oid'] = $row['t3ver_oid'];
-			$loc['t3ver_id'] = $row['t3ver_id'];
-			$loc['t3ver_wsid'] = $row['t3ver_wsid'];
-			$loc['t3ver_label'] = $row['t3ver_label'];
-			$loc['t3ver_state'] = $row['t3ver_state'];
-			$loc['t3ver_stage'] = $row['t3ver_stage'];
-			$loc['t3ver_count'] = $row['t3ver_count'];
-			$loc['t3ver_tstamp'] = $row['t3ver_tstamp'];
-			$loc['t3_origuid'] = $row['t3_origuid'];
-			$match = '/(.*)_(de|en)/';
+            $loc = [];
+            // Felder die in jeder Tabelle passen
+            $loc['sys_language_uid'] = $i;
+            if ($i === 1) {
+                $loc['l18n_parent'] = $row['uid'];
+                $loc['t3_origuid'] = $row['uid'];
+            } else {
+                $loc['uid'] = $row['uid'];
+            }
+            $loc['tstamp'] = time();
+            $loc['crdate'] = time();
+            $loc['cruser_id'] = $row['cruser_id'];
+            $loc['pid'] = $row['pid'];
+            $loc['deleted'] = $row['deleted'];
+            $loc['hidden'] = $row['hidden'];
+            $loc['t3ver_oid'] = $row['t3ver_oid'];
+            $loc['t3ver_id'] = $row['t3ver_id'];
+            $loc['t3ver_wsid'] = $row['t3ver_wsid'];
+            $loc['t3ver_label'] = $row['t3ver_label'];
+            $loc['t3ver_state'] = $row['t3ver_state'];
+            $loc['t3ver_stage'] = $row['t3ver_stage'];
+            $loc['t3ver_count'] = $row['t3ver_count'];
+            $loc['t3ver_tstamp'] = $row['t3ver_tstamp'];
+            $loc['t3_origuid'] = $row['t3_origuid'];
+            $match = '/(.*)_(de|en)/';
 
-			// kind of merge the mapping of custom to default typo3 fields
-			foreach ($fieldMapping as $key => $val) {
+            // kind of merge the mapping of custom to default typo3 fields
+            foreach ($fieldMapping as $key => $val) {
 
-				$newField = preg_replace($match, '$1', $key);
-				$suffix = array('de', 'en');
+                $newField = preg_replace($match, '$1', $key);
+                $suffix = ['de', 'en'];
 
-				if (preg_match($match, $key)) {
-					$oldField = $newField . '_' . $suffix[$i];
-					$loc[$newField] = $row[$oldField];
-					echo $oldField . ' - ' . $newField . ' - ' . $i . '<br />';
-				} else {
-					$loc[$key] = $row[$key];
-				}
-			}
+                if (preg_match($match, $key)) {
+                    $oldField = $newField . '_' . $suffix[$i];
+                    $loc[$newField] = $row[$oldField];
+                    echo $oldField . ' - ' . $newField . ' - ' . $i . '<br />';
+                } else {
+                    $loc[$key] = $row[$key];
+                }
+            }
 
-		 $GLOBALS['TYPO3_DB']->exec_INSERTQuery(
-				$newTableName,
-				$loc
-			);
+            $GLOBALS['TYPO3_DB']->exec_INSERTQuery(
+                $newTableName,
+                $loc
+            );
 
-		}
-		$i++;
-	}
-	while ($i <= 1);
-	echo  $records . ' records updated<br>';
+        }
+        $i++;
+    } while ($i <= 1);
+    echo $records . ' records updated<br>';
 }
 
 /**
  * @param $table
  * @param $mapping
  */
-function alterTables($table, $mapping) {
+function alterTables($table, $mapping)
+{
 
-	$pattern = '/(.*?)_de/';
-	$replace = '$1';
+    $pattern = '/(.*?)_de/';
+    $replace = '$1';
 
-	foreach ($mapping as $key => $val) {
-		$oldField = $key;
-		$field = preg_replace($pattern, $replace, $key);
-	}
+    foreach ($mapping as $key => $val) {
+        $oldField = $key;
+        $field = preg_replace($pattern, $replace, $key);
+    }
 
 
 }
@@ -178,14 +180,15 @@ function alterTables($table, $mapping) {
  *
  * @param $table
  */
-function deleteRecords($table) {
+function deleteRecords($table)
+{
 
-	$originalTable = $table;
+    $originalTable = $table;
 
-	$table = getNewTableNames($originalTable);
-	$query = 'DROP TABLE ' . $table . ';';
-	echo $table . ' deleted <br />';
-	$GLOBALS['TYPO3_DB']->sql_query($query);
+    $table = getNewTableNames($originalTable);
+    $query = 'DROP TABLE ' . $table . ';';
+    echo $table . ' deleted <br />';
+    $GLOBALS['TYPO3_DB']->sql_query($query);
 }
 
 
@@ -195,13 +198,14 @@ function deleteRecords($table) {
  * @param $table
  * @return mixed
  */
-function getNewTableNames($table) {
-	$pattern = '/tx_(.*?)_(.*)/';
-	$replace = 'tx_$1_domain_model_$2';
+function getNewTableNames($table)
+{
+    $pattern = '/tx_(.*?)_(.*)/';
+    $replace = 'tx_$1_domain_model_$2';
 
-	$table = preg_replace($pattern, $replace, $table);
+    $table = preg_replace($pattern, $replace, $table);
 
-	return $table;
+    return $table;
 }
 
 
@@ -210,32 +214,33 @@ function getNewTableNames($table) {
  *
  * @param $table
  */
-function addFields($table, $fieldMapping) {
-	$originalTable = $table;
+function addFields($table, $fieldMapping)
+{
+    $originalTable = $table;
 
-	$query[] = 'ALTER TABLE ' . $table . ' ADD title VARCHAR(255);';
-	$query[] = 'ALTER TABLE ' . $table . ' CHANGE COLUMN l10n_parent l18n_parent int(11);';
-	$query[] = 'ALTER TABLE ' . $table . ' CHANGE COLUMN l10n_diffsource l18n_diffsource mediumblob;';
+    $query[] = 'ALTER TABLE ' . $table . ' ADD title VARCHAR(255);';
+    $query[] = 'ALTER TABLE ' . $table . ' CHANGE COLUMN l10n_parent l18n_parent int(11);';
+    $query[] = 'ALTER TABLE ' . $table . ' CHANGE COLUMN l10n_diffsource l18n_diffsource mediumblob;';
 
-	$match = '/(.*)_de/';
+    $match = '/(.*)_de/';
 
-		// add fields that contain localization
-	foreach ($fieldMapping as $key => $val) {
-		if (preg_match($match, $key) && $key != 'title_de') {
+    // add fields that contain localization
+    foreach ($fieldMapping as $key => $val) {
+        if (preg_match($match, $key) && $key != 'title_de') {
 
-			$newField = preg_replace($match, '$1', $key);
-			echo 'Added new field <strong>' . $newField .'</strong><br/>';
-			$query[] = 'ALTER TABLE ' . $table . ' ADD '. $newField .' text;';
-		}
+            $newField = preg_replace($match, '$1', $key);
+            echo 'Added new field <strong>' . $newField . '</strong><br/>';
+            $query[] = 'ALTER TABLE ' . $table . ' ADD ' . $newField . ' text;';
+        }
 
-	}
+    }
 
 
-	foreach ($query as $statement) {
-		$GLOBALS['TYPO3_DB']->sql_query($statement);
-	}
+    foreach ($query as $statement) {
+        $GLOBALS['TYPO3_DB']->sql_query($statement);
+    }
 
-	echo 'Fields altered in table ' . $table . '<br />';
+    echo 'Fields altered in table ' . $table . '<br />';
 }
 
 ?>

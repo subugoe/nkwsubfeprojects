@@ -8,7 +8,7 @@ $sql = "SHOW tables";
 $query = $db->query($sql);
 
 while ($row = mysqli_fetch_object($query)) {
-	$table = $row->Tables_in_t3_w3l;
-	$sql = 'ALTER TABLE ' . $table . ' ENGINE=INNODB';
-	$db->query($sql);
+    $table = $row->Tables_in_t3_w3l;
+    $sql = 'ALTER TABLE ' . $table . ' ENGINE=INNODB';
+    $db->query($sql);
 }

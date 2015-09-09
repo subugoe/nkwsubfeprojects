@@ -6,21 +6,21 @@ $db = new MySqli($typo_db_host, $typo_db_username, $typo_db_password, $typo_db);
 $abfrage = 'SELECT uid, department FROM tx_nkwsubfeprojects_domain_model_project';
 
 $query = $db->query($abfrage);
-$groupList = array();
+$groupList = [];
 
 while ($row = mysqli_fetch_object($query)) {
-	if (!empty($row->department)) {
-		$groupList[$row->uid] = array();
+    if (!empty($row->department)) {
+        $groupList[$row->uid] = [];
 
-		if (strpos($row->department, ',')) {
-			$persons = explode(',', $row->department);
-			foreach ($persons as $person) {
-				array_push($groupList[$row->uid], trim($person));
-			}
-		} else {
-			array_push($groupList[$row->uid], $row->department);
-		}
-	}
+        if (strpos($row->department, ',')) {
+            $persons = explode(',', $row->department);
+            foreach ($persons as $person) {
+                array_push($groupList[$row->uid], trim($person));
+            }
+        } else {
+            array_push($groupList[$row->uid], $row->department);
+        }
+    }
 }
 
 $truncateQuery = "TRUNCATE tx_nkwsubfeprojects_group_tt_address_mm;";
@@ -28,14 +28,14 @@ $db->query($truncateQuery);
 
 foreach ($groupList as $key => $val) {
 
-	$werte = '';
+    $werte = '';
 
-	$i = 0;
+    $i = 0;
 
-	foreach ($val as $value) {
-		$insert = "INSERT INTO tx_nkwsubfeprojects_group_tt_address_mm (uid_local, uid_foreign) VALUES (" . $key . ", " . $value .")";
-		echo $insert . "\n";
-		$query = $db->query($insert);
-	}
+    foreach ($val as $value) {
+        $insert = "INSERT INTO tx_nkwsubfeprojects_group_tt_address_mm (uid_local, uid_foreign) VALUES (" . $key . ", " . $value . ")";
+        echo $insert . "\n";
+        $query = $db->query($insert);
+    }
 
 }

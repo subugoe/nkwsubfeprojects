@@ -31,15 +31,16 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  *
  * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
-class KeywordsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class KeywordsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	/**
-	 * Set default Orderings of Query Results
-	 *
-	 * @var array
-	 */
-	protected $defaultOrderings = array(
-		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-	);
+    /**
+     * Set default Orderings of Query Results
+     *
+     * @var array
+     */
+    protected $defaultOrderings = [
+        'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+    ];
 
 }

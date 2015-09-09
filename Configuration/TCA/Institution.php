@@ -26,99 +26,99 @@
  * ************************************************************* */
 
 if (!defined('TYPO3_MODE')) {
-	die('Access denied.');
+    die('Access denied.');
 }
-$TCA['tx_nkwsubfeprojects_domain_model_institution'] = array(
-	'ctrl' => $TCA['tx_nkwsubfeprojects_domain_model_institution']['ctrl'],
-	'interface' => array('showRecordFieldList' => 'hidden,title,acronym,descr,address,url,logo'),
-	'feInterface' => $TCA['tx_nkwsubfeprojects_domain_model_institution']['feInterface'],
-	'columns' => array(
-		'sys_language_uid' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.php:LGL.language',
-			'config' => array(
-				'type' => 'select',
-				'foreign_table' => 'sys_language',
-				'foreign_table_where' => 'ORDER BY sys_language.title',
-				'items' => array(
-					array('LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1),
-					array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0)
-				),
-			),
-		),
-		'l18n_parent' => array(
-			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
-			'config' => array(
-				'type' => 'select',
-				'items' => array(
-					array('', 0),
-				),
-				'foreign_table' => 'tx_nkwsubfeprojects_domain_model_institution',
-				'foreign_table_where' => 'AND tx_nkwsubfeprojects_domain_model_institution.pid=###CURRENT_PID### AND tx_nkwsubfeprojects_domain_model_institution.sys_language_uid IN (-1,0)',
-			),
-		),
-		'l18n_diffsource' => array(
-			'config' => array(
-				'type' => 'passthrough',
-			),
-		),
-		't3ver_label' => array(
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
-			'config' => array(
-				'type' => 'input',
-				'size' => '30',
-				'max' => '255',
-			)
-		),
-		'hidden' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
-			'config' => array('type' => 'check', 'default' => '0')
-		),
-		'title' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.title',
-			'config' => array('type' => 'input', 'size' => '30', 'eval' => 'required,trim')
-		),
-		'acronym' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.acronym',
-			'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-		),
-		'descr' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.descr',
-			'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
-		),
-		'address' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.address',
-			'config' => array('type' => 'input', 'cols' => '30', 'rows' => '3')
-		),
-		'url' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.url',
-			'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-		),
-		'logo' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.logo',
-			'config' => array(
-				'type' => 'group',
-				'internal_type' => 'file',
-				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-				'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
-				'uploadfolder' => 'uploads/tx_nkwsubfeprojects',
-				'size' => 1,
-				'minitems' => 0,
-				'maxitems' => 1,
-			)
-		),
-	),
-	'types' => array(
-		'0' => array('showitem' => 'hidden;;1;;1-1-1, title;;;;2-2-2, acronym;;;;3-3-3, descr, address, url, logo')
-	),
-	'palettes' => array('1' => array('showitem' => ''))
-);
+$TCA['tx_nkwsubfeprojects_domain_model_institution'] = [
+    'ctrl' => $TCA['tx_nkwsubfeprojects_domain_model_institution']['ctrl'],
+    'interface' => ['showRecordFieldList' => 'hidden,title,acronym,descr,address,url,logo'],
+    'feInterface' => $TCA['tx_nkwsubfeprojects_domain_model_institution']['feInterface'],
+    'columns' => [
+        'sys_language_uid' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+            'config' => [
+                'type' => 'select',
+                'foreign_table' => 'sys_language',
+                'foreign_table_where' => 'ORDER BY sys_language.title',
+                'items' => [
+                    ['LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1],
+                    ['LLL:EXT:lang/locallang_general.php:LGL.default_value', 0]
+                ],
+            ],
+        ],
+        'l18n_parent' => [
+            'displayCond' => 'FIELD:sys_language_uid:>:0',
+            'exclude' => 1,
+            'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
+            'config' => [
+                'type' => 'select',
+                'items' => [
+                    ['', 0],
+                ],
+                'foreign_table' => 'tx_nkwsubfeprojects_domain_model_institution',
+                'foreign_table_where' => 'AND tx_nkwsubfeprojects_domain_model_institution.pid=###CURRENT_PID### AND tx_nkwsubfeprojects_domain_model_institution.sys_language_uid IN (-1,0)',
+            ],
+        ],
+        'l18n_diffsource' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        't3ver_label' => [
+            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
+            'config' => [
+                'type' => 'input',
+                'size' => '30',
+                'max' => '255',
+            ]
+        ],
+        'hidden' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+            'config' => ['type' => 'check', 'default' => '0']
+        ],
+        'title' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.title',
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'required,trim']
+        ],
+        'acronym' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.acronym',
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'descr' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.descr',
+            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+        ],
+        'address' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.address',
+            'config' => ['type' => 'input', 'cols' => '30', 'rows' => '3']
+        ],
+        'url' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.url',
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'logo' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_institution.logo',
+            'config' => [
+                'type' => 'group',
+                'internal_type' => 'file',
+                'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+                'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+                'uploadfolder' => 'uploads/tx_nkwsubfeprojects',
+                'size' => 1,
+                'minitems' => 0,
+                'maxitems' => 1,
+            ]
+        ],
+    ],
+    'types' => [
+        '0' => ['showitem' => 'hidden;;1;;1-1-1, title;;;;2-2-2, acronym;;;;3-3-3, descr, address, url, logo']
+    ],
+    'palettes' => ['1' => ['showitem' => '']]
+];

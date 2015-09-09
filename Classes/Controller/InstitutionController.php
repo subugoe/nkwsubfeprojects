@@ -31,42 +31,46 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /**
  * Controller for Institution Data
  */
-class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository
-	 * @inject
-	 */
-	protected $institutionRepostitory;
+    /**
+     * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository
+     * @inject
+     */
+    protected $institutionRepostitory;
 
-	/**
-	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
-	 * @inject
-	 */
-	protected $projectRepository;
+    /**
+     * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
+     * @inject
+     */
+    protected $projectRepository;
 
-	public function initializeAction() {
-		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-		$pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
-	}
+    public function initializeAction()
+    {
+        /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+        $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+    }
 
-	/**
-	 * List all Institutions
-	 */
-	public function listAction() {
-		$institutions = $this->institutionRepostitory->findAll();
-		$this->view->assign('institutions', $institutions);
-	}
+    /**
+     * List all Institutions
+     */
+    public function listAction()
+    {
+        $institutions = $this->institutionRepostitory->findAll();
+        $this->view->assign('institutions', $institutions);
+    }
 
-	/**
-	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution
-	 */
-	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution) {
+    /**
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution
+     */
+    public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution)
+    {
 
-		$projects = $this->projectRepository->findAllInstitutions($institution);
+        $projects = $this->projectRepository->findAllInstitutions($institution);
 
-		$this->view->assign('institution', $institution);
-		$this->view->assign('projects', $projects);
-	}
+        $this->view->assign('institution', $institution);
+        $this->view->assign('projects', $projects);
+    }
 }

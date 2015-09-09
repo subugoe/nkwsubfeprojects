@@ -6,7 +6,7 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -29,62 +29,69 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 /**
  * Model for Persons as mapped by tt_address table
  */
-class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * @var string
-	 */
-	protected $firstName;
+    /**
+     * @var string
+     */
+    protected $firstName;
 
-	/**
-	 * @var string
-	 */
-	protected $lastName;
+    /**
+     * @var string
+     */
+    protected $lastName;
 
-	/**
-	 * @var string
-	 */
-	protected $title;
+    /**
+     * @var string
+     */
+    protected $title;
 
-	/**
-	 * @param string $firstName
-	 */
-	public function setFirstName($firstName) {
-		$this->firstName = $firstName;
-	}
+    /**
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getFirstName() {
-		return $this->firstName;
-	}
+    /**
+     * @param string $firstName
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
 
-	/**
-	 * @param string $lastName
-	 */
-	public function setLastName($lastName) {
-		$this->lastName = $lastName;
-	}
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getLastName() {
-		return $this->lastName;
-	}
+    /**
+     * @param string $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
 
-	/**
-	 * @param string $title
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
-	}
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 }
