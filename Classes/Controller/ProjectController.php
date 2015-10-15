@@ -30,49 +30,55 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /**
  * Project Controller
  */
-class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
-	 * @inject
-	 */
-	protected $projectRepostitory;
+    /**
+     * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
+     * @inject
+     */
+    protected $projectRepostitory;
 
-	public function initializeAction() {
-		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-		$pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
-	}
+    public function initializeAction()
+    {
+        if (intval($this->settings['includeCSS']) === 1) {
+            /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+            $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+            $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+        }
+    }
 
-	/**
-	 * List all Projects and link them to a single one
-	 *
-	 * @return void
-	 */
-	public function listAction() {
+    /**
+     * List all Projects and link them to a single one
+     *
+     * @return void
+     */
+    public function listAction()
+    {
 
-		if ($this->settings['listtype'] === 'x') {
-			$projects = $this->projectRepostitory->findAll();
-		} else {
-			$projects = $this->projectRepostitory->findByStatus($this->settings['listtype']);
-		}
+        if ($this->settings['listtype'] === 'x') {
+            $projects = $this->projectRepostitory->findAll();
+        } else {
+            $projects = $this->projectRepostitory->findByStatus($this->settings['listtype']);
+        }
 
-		$this->view->assign('projects', $projects);
-	}
+        $this->view->assign('projects', $projects);
+    }
 
-	/**
-	 * List Project Details
-	 *
-	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Project $project
-	 */
-	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Project $project) {
+    /**
+     * List Project Details
+     *
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Project $project
+     */
+    public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Project $project)
+    {
 
-		$newHeader = $project->getTitle() . ' - ' . $this->configurationManager->getContentObject()->data['header'];
-		// Assign new pageTitle
-		$GLOBALS['TSFE']->page['title'] = $newHeader;
+        $newHeader = $project->getTitle() . ' - ' . $this->configurationManager->getContentObject()->data['header'];
+        // Assign new pageTitle
+        $GLOBALS['TSFE']->page['title'] = $newHeader;
 
-		$this->view->assign('header', $newHeader);
-		$this->view->assign('project', $project);
-	}
+        $this->view->assign('header', $newHeader);
+        $this->view->assign('project', $project);
+    }
 
 }
