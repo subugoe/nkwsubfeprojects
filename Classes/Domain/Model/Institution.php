@@ -6,7 +6,7 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -29,119 +29,132 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 /**
  * Institution Model
  */
-class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * @var string
-	 */
-	protected $title;
+    /**
+     * @var string
+     */
+    protected $title;
 
-	/**
-	 * @var string
-	 */
-	protected $acronym;
+    /**
+     * @var string
+     */
+    protected $acronym;
 
-	/**
-	 * @var string
-	 */
-	protected $descr;
+    /**
+     * @var string
+     */
+    protected $descr;
 
-	/**
-	 * @var string
-	 */
-	protected $address;
+    /**
+     * @var string
+     */
+    protected $address;
 
-	/**
-	 * @var string
-	 */
-	protected $url;
+    /**
+     * @var string
+     */
+    protected $url;
 
-	/**
-	 * @var string
-	 */
-	protected $logo;
+    /**
+     * @var string
+     */
+    protected $logo;
 
-	/**
-	 * @param string $acronym
-	 */
-	public function setAcronym($acronym) {
-		$this->acronym = $acronym;
-	}
+    /**
+     * @param string $acronym
+     */
+    public function setAcronym($acronym)
+    {
+        $this->acronym = $acronym;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getAcronym() {
-		return $this->acronym;
-	}
+    /**
+     * @return string
+     */
+    public function getAcronym()
+    {
+        return $this->acronym;
+    }
 
-	/**
-	 * @param string $address
-	 */
-	public function setAddress($address) {
-		$this->address = $address;
-	}
+    /**
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getAddress() {
-		return $this->address;
-	}
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
 
-	/**
-	 * @param string $descr
-	 */
-	public function setDescr($descr) {
-		$this->descr = $descr;
-	}
+    /**
+     * @param string $descr
+     */
+    public function setDescr($descr)
+    {
+        $this->descr = $descr;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getDescr() {
-		return $this->descr;
-	}
+    /**
+     * @return string
+     */
+    public function getDescr()
+    {
+        return $this->descr;
+    }
 
-	/**
-	 * @param string $logo
-	 */
-	public function setLogo($logo) {
-		$this->logo = $logo;
-	}
+    /**
+     * @param string $logo
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getLogo() {
-		return $this->logo;
-	}
+    /**
+     * @return string
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
 
-	/**
-	 * @param string $title
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
-	}
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * @param string $url
-	 */
-	public function setUrl($url) {
-		$this->url = $url;
-	}
+    /**
+     * @param string $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getUrl() {
-		return $this->url;
-	}
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 }

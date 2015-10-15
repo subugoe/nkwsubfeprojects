@@ -31,54 +31,58 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /**
  * Controller for Keywords
  */
-class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository
-	 * @inject
-	 */
-	protected $keywordsRepository;
+    /**
+     * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository
+     * @inject
+     */
+    protected $keywordsRepository;
 
-	/**
-	 * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
-	 * @inject
-	 */
-	protected $projectRepository;
+    /**
+     * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
+     * @inject
+     */
+    protected $projectRepository;
 
 
-	public function initializeAction() {
-		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-		$pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
-	}
+    public function initializeAction()
+    {
+        /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+        $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+    }
 
-	/**
-	 * List all Keywords
-	 */
-	public function listAction() {
-		$keywords = $this->keywordsRepository->findAll();
-		$this->view->assign('keywords', $keywords);
-	}
+    /**
+     * List all Keywords
+     */
+    public function listAction()
+    {
+        $keywords = $this->keywordsRepository->findAll();
+        $this->view->assign('keywords', $keywords);
+    }
 
-	/**
-	 * Get details and projects for a specified Keyword
-	 *
-	 * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword
-	 */
-	public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword) {
+    /**
+     * Get details and projects for a specified Keyword
+     *
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword
+     */
+    public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword)
+    {
 
-		$newHeader = $this->configurationManager->getContentObject()->data['header'] . ' ' . $keyword->getTitle();
+        $newHeader = $this->configurationManager->getContentObject()->data['header'] . ' ' . $keyword->getTitle();
 
-		$projects = $this->projectRepository->findProjectByKeywords($keyword);
-		$this->view->assignMultiple(
-				array(
-						'projects' => $projects,
-						'header' => $newHeader,
-						'keyword' => $keyword
-				)
-		);
+        $projects = $this->projectRepository->findProjectByKeywords($keyword);
+        $this->view->assignMultiple(
+            array(
+                'projects' => $projects,
+                'header' => $newHeader,
+                'keyword' => $keyword
+            )
+        );
 
-		// Change page title
-		$GLOBALS['TSFE']->page['title'] = $newHeader;
-	}
+        // Change page title
+        $GLOBALS['TSFE']->page['title'] = $newHeader;
+    }
 }

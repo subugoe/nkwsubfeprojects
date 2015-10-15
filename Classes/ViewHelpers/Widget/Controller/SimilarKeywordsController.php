@@ -28,78 +28,83 @@ namespace Subugoe\Nkwsubfeprojects\ViewHelpers\Widget\Controller;
 /**
  * Determines and displays similar keywords
  */
-class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController {
+class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
+{
 
-	/**
-	 * @var array
-	 */
-	protected $configuration = array(
-		'titleField' => 'title',
-		'linkObject' => '',
-		'linkAction' => '',
-		'linkController' => '',
-		'linkPluginName' => ''
-	);
+    /**
+     * @var array
+     */
+    protected $configuration = array(
+        'titleField' => 'title',
+        'linkObject' => '',
+        'linkAction' => '',
+        'linkController' => '',
+        'linkPluginName' => ''
+    );
 
-	/**
-	 * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-	 */
-	protected $objects;
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    protected $objects;
 
-	/**
-	 * Uid that is excluded from displaying keywords
-	 *
-	 * @var int
-	 */
-	protected $exclude;
+    /**
+     * Uid that is excluded from displaying keywords
+     *
+     * @var int
+     */
+    protected $exclude;
 
-	/**
-	 * @return void
-	 */
-	public function initializeAction() {
-		$this->objects = $this->widgetConfiguration['objects'];
-		$this->exclude = $this->widgetConfiguration['exclude'];
-		\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
-	}
+    /**
+     * @return void
+     */
+    public function initializeAction()
+    {
+        $this->objects = $this->widgetConfiguration['objects'];
+        $this->exclude = $this->widgetConfiguration['exclude'];
+        \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration,
+            $this->widgetConfiguration['configuration'], TRUE);
+    }
 
-	/**
-	 * Generate titles, indexes and assign this to the view
-	 *
-	 * @return void
-	 */
-	public function indexAction() {
+    /**
+     * Generate titles, indexes and assign this to the view
+     *
+     * @return void
+     */
+    public function indexAction()
+    {
 
-		$groupings = $this->flattenList($this->objects);
-		$this->view->assignMultiple(
-			array (
-				'titles' => $groupings,
-				'linkAction' => $this->configuration['linkAction'],
-				'linkController' => $this->configuration['linkController'],
-				'linkPluginName' => $this->configuration['linkPluginName']
-			)
-		);
-	}
+        $groupings = $this->flattenList($this->objects);
+        $this->view->assignMultiple(
+            array(
+                'titles' => $groupings,
+                'linkAction' => $this->configuration['linkAction'],
+                'linkController' => $this->configuration['linkController'],
+                'linkPluginName' => $this->configuration['linkPluginName']
+            )
+        );
+    }
 
-	/**
-	 * Flattens the list of keywords and makes a set out of them
-	 *
-	 * @param $objects
-	 * @return array
-	 */
-	protected function flattenList($objects){
+    /**
+     * Flattens the list of keywords and makes a set out of them
+     *
+     * @param $objects
+     * @return array
+     */
+    protected function flattenList($objects)
+    {
 
-		$key = array();
+        $key = array();
 
-		foreach ($objects as $object) {
-			foreach ($object->getKeywords() as $keyword) {
-				if ($this->exclude != $keyword->getUid()) {
-					$key[$keyword->getUid()] = $keyword->getTitle();
-				}
-			}
-		}
-			// sort by value
-		asort($key, SORT_LOCALE_STRING);
+        foreach ($objects as $object) {
+            foreach ($object->getKeywords() as $keyword) {
+                if ($this->exclude != $keyword->getUid()) {
+                    $key[$keyword->getUid()] = $keyword->getTitle();
+                }
+            }
+        }
+        // sort by value
+        asort($key, SORT_LOCALE_STRING);
 
-		return $key;
-	}
+        return $key;
+    }
 }

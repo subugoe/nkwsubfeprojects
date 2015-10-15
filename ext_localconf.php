@@ -22,59 +22,59 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+    die ('Access denied.');
 }
 
 // pi1 Project list vieww
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Subugoe.' . $_EXTKEY,
-		'pi1',
-		array(
-				'Project' => 'list',
-		)
+    'Subugoe.' . $_EXTKEY,
+    'pi1',
+    array(
+        'Project' => 'list',
+    )
 );
 
 // pi2 Project details - single view
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Subugoe.' . $_EXTKEY,
-		'pi2',
-		array(
-				'Project' => 'detail',
-		)
+    'Subugoe.' . $_EXTKEY,
+    'pi2',
+    array(
+        'Project' => 'detail',
+    )
 );
 
 // pi3 Keywords - list view
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Subugoe.' . $_EXTKEY,
-		'pi3',
-		array(
-				'Keywords' => 'list',
-		)
+    'Subugoe.' . $_EXTKEY,
+    'pi3',
+    array(
+        'Keywords' => 'list',
+    )
 );
 
 // pi4 Keyword and Institutions details
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Subugoe.' . $_EXTKEY,
-		'pi4',
-		array(
-				'Keywords' => 'detail',
-		)
+    'Subugoe.' . $_EXTKEY,
+    'pi4',
+    array(
+        'Keywords' => 'detail',
+    )
 );
 
 // pi5 institution list vieww
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Subugoe.' . $_EXTKEY,
-		'pi5',
-		array(
-				'Institution' => 'list',
-		)
+    'Subugoe.' . $_EXTKEY,
+    'pi5',
+    array(
+        'Institution' => 'list',
+    )
 );
 
 // pi6 institution detail vieww
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Subugoe.' . $_EXTKEY,
-		'pi6',
-		array(
-				'Institution' => 'detail',
-		)
+    'Subugoe.' . $_EXTKEY,
+    'pi6',
+    array(
+        'Institution' => 'detail',
+    )
 );

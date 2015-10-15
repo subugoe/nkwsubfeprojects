@@ -29,15 +29,16 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 /**
  * Institution Repository
  */
-class InstitutionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class InstitutionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	/**
-	 * Set default Orderings of Query Results
-	 *
-	 * @var array
-	 */
-	protected $defaultOrderings = array(
-		'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-	);
+    /**
+     * Set default Orderings of Query Results
+     *
+     * @var array
+     */
+    protected $defaultOrderings = array(
+        'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+    );
 
 }
