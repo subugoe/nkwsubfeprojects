@@ -32,9 +32,9 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-    );
+    ];
 
     /**
      * Find all Institutions that are related to a project

@@ -75,11 +75,11 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
         $projects = $this->projectRepository->findProjectByKeywords($keyword);
         $this->view->assignMultiple(
-            array(
+            [
                 'projects' => $projects,
                 'header' => $newHeader,
                 'keyword' => $keyword
-            )
+            ]
         );
 
         // Change page title

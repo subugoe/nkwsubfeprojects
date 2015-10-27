@@ -32,8 +32,8 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-    );
+    ];
 
 }

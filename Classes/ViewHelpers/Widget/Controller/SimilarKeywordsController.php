@@ -34,13 +34,13 @@ class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWid
     /**
      * @var array
      */
-    protected $configuration = array(
+    protected $configuration = [
         'titleField' => 'title',
         'linkObject' => '',
         'linkAction' => '',
         'linkController' => '',
         'linkPluginName' => ''
-    );
+    ];
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
@@ -75,12 +75,12 @@ class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWid
 
         $groupings = $this->flattenList($this->objects);
         $this->view->assignMultiple(
-            array(
+            [
                 'titles' => $groupings,
                 'linkAction' => $this->configuration['linkAction'],
                 'linkController' => $this->configuration['linkController'],
                 'linkPluginName' => $this->configuration['linkPluginName']
-            )
+            ]
         );
     }
 
@@ -93,7 +93,7 @@ class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWid
     protected function flattenList($objects)
     {
 
-        $key = array();
+        $key = [];
 
         foreach ($objects as $object) {
             foreach ($object->getKeywords() as $keyword) {

@@ -47,7 +47,7 @@ class SimilarKeywordsViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWid
     public function render(
         \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects,
         $exclude = null,
-        array $configuration = array('titleField' => 'title')
+        array $configuration = ['titleField' => 'title']
     )
     {
         return $this->initiateSubRequest();

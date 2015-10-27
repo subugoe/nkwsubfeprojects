@@ -28,230 +28,230 @@
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
-$TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
+$TCA['tx_nkwsubfeprojects_domain_model_project'] = [
     'ctrl' => $TCA['tx_nkwsubfeprojects_domain_model_project']['ctrl'],
-    'interface' => array(
+    'interface' => [
         'showRecordFieldList' => 'hidden,title,subtitle,acronym,descr,runningtimestart,runningtimeend,fundingtimestart,fundingtimeend,url1,url2,url3,url4,url5,status,notes,images,internalnotes,funding,fundingsum,leadinstitution,institutions,keywords,freekeywords,leadperson,person,department,blacklisted,ehemalige'
-    ),
-    'types' => array(
-        '1' => array('showitem' => 'sys_language_uid;;;;1-1-1,hidden,title, subtitle, acronym, descr;;;richtext[]:rte_transform[mode=ts_css], runningtimestart, runningtimeend, fundingtimestart, fundingtimeend, url1, url2, url3, url4, url5, status, images, notes,  internalnotes, funding, fundingsum, leadinstitution, institutions, keywords, freekeywords, leadperson, person, department, blacklisted, ehemalige')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => '')
-    ),
+    ],
+    'types' => [
+        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1,hidden,title, subtitle, acronym, descr;;;richtext[]:rte_transform[mode=ts_css], runningtimestart, runningtimeend, fundingtimestart, fundingtimeend, url1, url2, url3, url4, url5, status, images, notes,  internalnotes, funding, fundingsum, leadinstitution, institutions, keywords, freekeywords, leadperson, person, department, blacklisted, ehemalige']
+    ],
+    'palettes' => [
+        '1' => ['showitem' => '']
+    ],
     'feInterface' => $TCA['tx_nkwsubfeprojects_domain_model_project']['feInterface'],
-    'columns' => array(
-        'sys_language_uid' => array(
+    'columns' => [
+        'sys_language_uid' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.php:LGL.language',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
-                'items' => array(
-                    array('LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1),
-                    array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0)
-                ),
-            ),
-        ),
-        'l18n_parent' => array(
+                'items' => [
+                    ['LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1],
+                    ['LLL:EXT:lang/locallang_general.php:LGL.default_value', 0]
+                ],
+            ],
+        ],
+        'l18n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [
+                    ['', 0],
+                ],
                 'foreign_table' => 'tx_nkwsubfeprojects_domain_model_project',
                 'foreign_table_where' => 'AND tx_nkwsubfeprojects_domain_model_project.pid=###CURRENT_PID### AND tx_nkwsubfeprojects_domain_model_project.sys_language_uid IN (-1,0)',
-            ),
-        ),
-        'l18n_diffsource' => array(
-            'config' => array(
+            ],
+        ],
+        'l18n_diffsource' => [
+            'config' => [
                 'type' => 'passthrough',
-            ),
-        ),
-        't3ver_label' => array(
+            ],
+        ],
+        't3ver_label' => [
             'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '255',
-            )
-        ),
-        'hidden' => array(
+            ]
+        ],
+        'hidden' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
-            'config' => array('type' => 'check', 'default' => '0')
-        ),
-        'title' => array(
+            'config' => ['type' => 'check', 'default' => '0']
+        ],
+        'title' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.title_de',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'required,trim')
-        ),
-        'subtitle' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'required,trim']
+        ],
+        'subtitle' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.subtitle_de',
-            'config' => array('type' => 'text', 'cols' => '30', 'rows' => '2')
-        ),
-        'acronym' => array(
+            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '2']
+        ],
+        'acronym' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.acronym',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-        ),
-        'descr' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'descr' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.descr_de',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
-                'wizards' => array(
+                'wizards' => [
                     '_PADDING' => 2,
-                    'RTE' => array(
+                    'RTE' => [
                         'notNewRecords' => 1,
                         'RTEonly' => 1,
                         'type' => 'script',
                         'title' => 'Full screen Rich Text Editing|Formatteret redigering i hele vinduet',
                         'icon' => 'wizard_rte2.gif',
                         'script' => 'wizard_rte.php',
-                    ),
-                ),
-            )
-        ),
-        'runningtimestart' => array(
+                    ],
+                ],
+            ]
+        ],
+        'runningtimestart' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.runningtimestart',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '8',
                 'max' => '20',
                 'eval' => 'date',
                 'checkbox' => '0',
                 'default' => '0'
-            )
-        ),
-        'runningtimeend' => array(
+            ]
+        ],
+        'runningtimeend' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.runningtimeend',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '8',
                 'max' => '20',
                 'eval' => 'date',
                 'checkbox' => '0',
                 'default' => '0'
-            )
-        ),
-        'fundingtimestart' => array(
+            ]
+        ],
+        'fundingtimestart' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.fundingtimestart',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '8',
                 'max' => '20',
                 'eval' => 'date',
                 'checkbox' => '0',
                 'default' => '0'
-            )
-        ),
-        'fundingtimeend' => array(
+            ]
+        ],
+        'fundingtimeend' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.fundingtimeend',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '8',
                 'max' => '20',
                 'eval' => 'date',
                 'checkbox' => '0',
                 'default' => '0'
-            )
-        ),
-        'url1' => array(
+            ]
+        ],
+        'url1' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.url1',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-        ),
-        'url2' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'url2' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.url2',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-        ),
-        'url3' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'url3' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.url3',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-        ),
-        'url4' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'url4' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.url4',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-        ),
-        'url5' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'url5' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.url5',
-            'config' => array('type' => 'input', 'size' => '30', 'eval' => 'trim')
-        ),
-        'status' => array(
+            'config' => ['type' => 'input', 'size' => '30', 'eval' => 'trim']
+        ],
+        'status' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array(
+                'items' => [
+                    [
                         'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status.I.0',
                         '0'
-                    ),
-                    array(
+                    ],
+                    [
                         'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status.I.1',
                         '1'
-                    ),
-                    array(
+                    ],
+                    [
                         'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status.I.2',
                         '2'
-                    ),
-                    array(
+                    ],
+                    [
                         'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status.I.3',
                         '3'
-                    ),
-                    array(
+                    ],
+                    [
                         'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status.I.4',
                         '4'
-                    )
-                ),
+                    ]
+                ],
                 'size' => 1,
                 'maxitems' => 1
-            )
-        ),
-        'images' => array(
+            ]
+        ],
+        'images' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_images',
-            'config' => array(
+            'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_nkwsubfeprojects_domain_model_images',
                 'maxitems' => 9999,
-                'appearance' => array(
+                'appearance' => [
                     'newRecordLinkPosition' => 'bottom',
                     'collapseAll' => 0,
                     'expandSingle' => 1,
-                ),
-            ),
-        ),
-        'notes' => array(
+                ],
+            ],
+        ],
+        'notes' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.notes_de',
-            'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
-        ),
-        'internalnotes' => array(
+            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+        ],
+        'internalnotes' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.internalnotes_de',
-            'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
-        ),
-        'funding' => array(
+            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+        ],
+        'funding' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.funding',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_nkwsubfeprojects_domain_model_institution',
@@ -259,21 +259,21 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'foreign_sortby' => 'title'
-            )
-        ),
-        'fundingsum' => array(
+            ]
+        ],
+        'fundingsum' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.fundingSum',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'eval' => 'trim,num'
-            )
-        ),
-        'leadinstitution' => array(
+            ]
+        ],
+        'leadinstitution' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.leadinstitution',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_nkwsubfeprojects_domain_model_institution',
@@ -281,12 +281,12 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'foreign_sortby' => 'title'
-            )
-        ),
-        'institutions' => array(
+            ]
+        ],
+        'institutions' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.institutions',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_nkwsubfeprojects_domain_model_institution',
@@ -294,12 +294,12 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'foreign_sortby' => 'title'
-            )
-        ),
-        'keywords' => array(
+            ]
+        ],
+        'keywords' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.keywords',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_nkwsubfeprojects_domain_model_keywords',
@@ -307,17 +307,17 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'foreign_sortby' => 'title'
-            )
-        ),
-        'freekeywords' => array(
+            ]
+        ],
+        'freekeywords' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.freekeywords_de',
-            'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
-        ),
-        'leadperson' => array(
+            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+        ],
+        'leadperson' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.leadperson',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tt_address',
                 'foreign_table_where' => ' ORDER BY tt_address.last_name ASC',
@@ -327,18 +327,18 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'MM' => 'tx_nkwsubfeprojects_leadperson_tt_address_mm',
-                'wizards' => array(
-                    'suggest' => array(
+                'wizards' => [
+                    'suggest' => [
                         'type' => 'suggest',
                         'maxItemsInResultList' => 25,
-                    ),
-                ),
-            )
-        ),
-        'person' => array(
+                    ],
+                ],
+            ]
+        ],
+        'person' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.person',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tt_address',
                 'foreign_table_where' => ' ORDER BY tt_address.last_name ASC',
@@ -348,18 +348,18 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'MM' => 'tx_nkwsubfeprojects_person_tt_address_mm',
-                'wizards' => array(
-                    'suggest' => array(
+                'wizards' => [
+                    'suggest' => [
                         'type' => 'suggest',
                         'maxItemsInResultList' => 25,
-                    ),
-                ),
-            )
-        ),
-        'department' => array(
+                    ],
+                ],
+            ]
+        ],
+        'department' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.department',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tt_address_group',
                 'foreign_table_where' => ' ORDER BY tt_address_group.title ASC',
@@ -369,23 +369,23 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = array(
                 'minitems' => 0,
                 'maxitems' => 99,
                 'MM' => 'tx_nkwsubfeprojects_group_tt_address_mm',
-                'wizards' => array(
-                    'suggest' => array(
+                'wizards' => [
+                    'suggest' => [
                         'type' => 'suggest',
                         'maxItemsInResultList' => 25,
-                    ),
-                ),
-            )
-        ),
-        'blacklisted' => array(
+                    ],
+                ],
+            ]
+        ],
+        'blacklisted' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.blacklisted',
-            'config' => array('type' => 'check', 'default' => '0')
-        ),
-        'ehemalige' => array(
+            'config' => ['type' => 'check', 'default' => '0']
+        ],
+        'ehemalige' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.ehemalige',
-            'config' => array('type' => 'text', 'cols' => '30', 'rows' => '5')
-        )
-    ),
-);
+            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+        ]
+    ],
+];
