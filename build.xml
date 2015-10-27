@@ -97,12 +97,4 @@
 			<arg path="${basedir}/build/code-browser"/>
 		</exec>
 	</target>
-	<target name="sass">
-		<apply executable="/usr/bin/sass" dest="${basedir}/Resources/Public/Css/">
-			<srcfile />
-			<targetfile />
-			<fileset dir="${basedir}/Resources/Private/Sass/" includes="*.scss"/>
-			<mapper type="glob" from="*.scss" to="*.css"/>
-		</apply>
-	</target>
 </project>

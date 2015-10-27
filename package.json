@@ -1,0 +1,23 @@
+{
+  "name": "nkwsubfeprojects",
+  "version": "2.5.1",
+  "description": "SUB Göttingen Project Database",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subugoe/nkwsubfeprojects.git"
+  },
+  "author": "Ingo Pfennigstorf",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/subugoe/nkwsubfeprojects/issues"
+  },
+  "homepage": "https://github.com/subugoe/nkwsubfeprojects",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-cached": "^1.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-scss-lint": "^0.3.6"
+  }
+}

@@ -1,2 +1,8 @@
+/build/code-browser
+/build/pdepend
+/build/api
+/build/logs
+/build/coverage
 .svn
 .sass-cache/
+/node_modules
