@@ -27,7 +27,7 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  * ************************************************************* */
 
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use Subugoe\Nkwsubfeprojects\Service\AssetService;
 
 /**
  * Project Controller
@@ -43,11 +43,8 @@ class ProjectController extends ActionController
 
     public function initializeAction()
     {
-        if (intval($this->settings['includeCSS']) === 1) {
-            /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-            $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-            $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
-        }
+        $assetService = $this->objectManager->get(AssetService::class);
+        $assetService->includeCss($this->settings);
     }
 
     /**
