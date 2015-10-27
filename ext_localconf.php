@@ -79,3 +79,4 @@ if (!defined('TYPO3_MODE')) {
     ]
 );
 
+$TYPO3_CONF_VARS['EXTCONF']['nkwsubmenu']['ownSidebar'][$_EXTKEY] = 'EXT:' . $_EXTKEY . '/Classes/Service/MetaInformationService.php:Subugoe\\Nkwsubfeprojects\\Service\\MetaInformationService->getMetaInformation';

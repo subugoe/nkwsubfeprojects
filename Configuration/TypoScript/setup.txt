@@ -2,6 +2,7 @@ plugin.tx_nkwsubfeprojects {
 	features {
 		skipDefaultArguments = 1
 	}
+
 	persistence {
 		classes {
 			Subugoe\Nkwsubfeprojects\Domain\Model\Person {
@@ -15,6 +16,7 @@ plugin.tx_nkwsubfeprojects {
 					}
 				}
 			}
+
 			Subugoe\Nkwsubfeprojects\Domain\Model\Group {
 				mapping {
 					tableName = tt_address_group
@@ -35,7 +37,12 @@ plugin.tx_nkwsubfeprojects {
 			}
 		}
 	}
+
 	view {
 		defaultPid = auto
+	}
+
+	settings {
+		includeCSS = 1
 	}
 }
