@@ -38,7 +38,7 @@
 					<f:then>
 						<f:for each="{project.funding}" as="institution">
 							<li>
-								<f:link.action action="detail" controller="Institution" pluginName="pi6" arguments="{institution: institution}">{institution.title}
+								<f:link.action action="detail" controller="Institution" pluginName="pi6" arguments="{institution: institution}" extensionName="nkwsubfeprojects">{institution.title}
 									<f:if condition="{institution.logo}">
 										<f:then>
 											<f:image src="uploads/tx_nkwsubfeprojects/{institution.logo}" alt="Logo {institution.title}"/>

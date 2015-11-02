@@ -1,5 +1,5 @@
 <ul>
 	<f:for each="{persons}" as="person">
-		<li><f:link.page pageUid="1476" additionalParams="{tx_substaff_persondetails: {person: person}}">{person.title} {person.firstName} {person.lastName}</f:link.page></li>
+		<li><f:link.page pageUid="1476" additionalParams="{tx_substaff_persondetails: {person: person}}">{person.title.title} {person.firstName} {person.lastName}</f:link.page></li>
 	</f:for>
 </ul>
