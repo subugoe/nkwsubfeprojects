@@ -12,7 +12,7 @@ plugin.tx_nkwsubfeprojects {
 					columns {
 						first_name = firstName
 						last_name = lastName
-						title = title
+						univz_title.mapOnProperty = title
 					}
 				}
 			}
