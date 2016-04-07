@@ -28,8 +28,6 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
 
 /**
  * Repository Class for Keywords
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  */
 class KeywordsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {

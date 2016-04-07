@@ -1,10 +1,10 @@
 <?php
-namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
+namespace Subugoe\Nkwsubfeprojects\Service;
 
 /* * *************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
+ *  (c) 2015 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
  *      Goettingen State Library
  *
  *  All rights reserved
@@ -25,15 +25,21 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
- * Repository Class for Persons as mapped by tt_address
+ * Asset handling
  */
-class PersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class AssetService
 {
+    public function includeCss($settings)
+    {
 
-    protected $defaultOrderings = [
-        'lastName' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-    ];
+        if (isset($settings['includeCSS']) && intval($settings['includeCSS']) === 1) {
+            /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+            $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+            $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+        }
+    }
 
 }

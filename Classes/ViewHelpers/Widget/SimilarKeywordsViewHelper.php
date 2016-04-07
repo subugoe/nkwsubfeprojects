@@ -24,11 +24,12 @@ namespace Subugoe\Nkwsubfeprojects\ViewHelpers\Widget;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper;
 
 /**
  * Helper for finding similar keywords
  */
-class SimilarKeywordsViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper
+class SimilarKeywordsViewHelper extends AbstractWidgetViewHelper
 {
 
     /**
@@ -44,7 +45,11 @@ class SimilarKeywordsViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWid
      * @param array $configuration
      * @return string
      */
-    public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, $exclude = null, array $configuration = ['titleField' => 'title'])
+    public function render(
+        \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects,
+        $exclude = null,
+        array $configuration = ['titleField' => 'title']
+    )
     {
         return $this->initiateSubRequest();
     }

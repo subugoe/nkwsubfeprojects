@@ -2,19 +2,21 @@ plugin.tx_nkwsubfeprojects {
 	features {
 		skipDefaultArguments = 1
 	}
+
 	persistence {
 		classes {
-			Subugoe\Nkwsubfeprojects\Domain\Model\Person {
+			Subugoe\Substaff\Domain\Model\Person {
 				mapping {
 					tableName = tt_address
-					recordType = Tx_Nkwsubfeprojects_Domain_Model_Person
+					recordType = Tx_Substaff_Domain_Model_Person
 					columns {
 						first_name = firstName
 						last_name = lastName
-						title = title
+						univz_title.mapOnProperty = title
 					}
 				}
 			}
+
 			Subugoe\Nkwsubfeprojects\Domain\Model\Group {
 				mapping {
 					tableName = tt_address_group
@@ -35,7 +37,12 @@ plugin.tx_nkwsubfeprojects {
 			}
 		}
 	}
+
 	view {
 		defaultPid = auto
+	}
+
+	settings {
+		includeCSS = 1
 	}
 }

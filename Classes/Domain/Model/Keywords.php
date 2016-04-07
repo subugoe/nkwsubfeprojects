@@ -37,13 +37,6 @@ class Keywords extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $title;
 
-    /**
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
 
     /**
      * @param string $title
@@ -51,6 +44,14 @@ class Keywords extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
 }

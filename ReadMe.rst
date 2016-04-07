@@ -1,0 +1,1 @@
+Documentation/Manual/Manual.rst

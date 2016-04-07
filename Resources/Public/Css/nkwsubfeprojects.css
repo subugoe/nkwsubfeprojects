@@ -1,26 +1,16 @@
 .tx-nkwsubfeprojects dd {
-  background-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/bullet.png");
-  padding-left: 12px;
+  padding-left: 1em;
   line-height: 1.7em;
   background-repeat: no-repeat;
   margin-left: 8px;
-  background-position-y: 23%;
-}
+  background-position-y: 23%; }
+
 .tx-nkwsubfeprojects dt {
   color: #626262;
-  margin: 10px 0;
-}
+  margin: 10px 0; }
+
 .tx-nkwsubfeprojects .letterNavi li:hover {
-  text-shadow: 2px 2px 5px #999;
-}
-.tx-nkwsubfeprojects .letterNavi span.pipe {
-  color: #333333;
-}
-.tx-nkwsubfeprojects .letterNavi a {
-  text-decoration: none !important;
-  border-bottom: 0 !important;
-}
-.tx-nkwsubfeprojects .subprojects-main {
-  width: 72%;
-  float: left;
-}
+  text-shadow: 2px 2px 5px #999; }
+
+.tx-nkwsubfeprojects .letterNavi .pipe {
+  color: #333333; }

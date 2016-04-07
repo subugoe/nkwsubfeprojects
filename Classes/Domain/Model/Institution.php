@@ -1,30 +1,30 @@
 <?php
 namespace Subugoe\Nkwsubfeprojects\Domain\Model;
 
-    /* * *************************************************************
-     *  Copyright notice
-     *
-     *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
-     *      Goettingen State Library
-     *
-     *  All rights reserved
-     *
-     *  This script is part of the TYPO3 project. The TYPO3 project is
-     *  free software; you can redistribute it and/or modify
-     *  it under the terms of the GNU General Public License as published by
-     *  the Free Software Foundation; either version 3 of the License, or
-     *  (at your option) any later version.
-     *
-     *  The GNU General Public License can be found at
-     *  http://www.gnu.org/copyleft/gpl.html.
-     *
-     *  This script is distributed in the hope that it will be useful,
-     *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-     *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-     *  GNU General Public License for more details.
-     *
-     *  This copyright notice MUST APPEAR in all copies of the script!
-     * ************************************************************* */
+/* * *************************************************************
+ *  Copyright notice
+ *
+ *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
+ *      Goettingen State Library
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ * ************************************************************* */
 
 /**
  * Institution Model
@@ -63,14 +63,6 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $logo;
 
     /**
-     * @return string
-     */
-    public function getAcronym()
-    {
-        return $this->acronym;
-    }
-
-    /**
      * @param string $acronym
      */
     public function setAcronym($acronym)
@@ -81,9 +73,9 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getAddress()
+    public function getAcronym()
     {
-        return $this->address;
+        return $this->acronym;
     }
 
     /**
@@ -97,9 +89,9 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getDescr()
+    public function getAddress()
     {
-        return $this->descr;
+        return $this->address;
     }
 
     /**
@@ -113,9 +105,9 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getLogo()
+    public function getDescr()
     {
-        return $this->logo;
+        return $this->descr;
     }
 
     /**
@@ -129,9 +121,9 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getTitle()
+    public function getLogo()
     {
-        return $this->title;
+        return $this->logo;
     }
 
     /**
@@ -145,9 +137,9 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getUrl()
+    public function getTitle()
     {
-        return $this->url;
+        return $this->title;
     }
 
     /**
@@ -156,5 +148,13 @@ class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setUrl($url)
     {
         $this->url = $url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

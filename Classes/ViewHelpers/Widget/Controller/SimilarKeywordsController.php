@@ -24,11 +24,12 @@ namespace Subugoe\Nkwsubfeprojects\ViewHelpers\Widget\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController;
 
 /**
  * Determines and displays similar keywords
  */
-class SimilarKeywordsController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
+class SimilarKeywordsController extends AbstractWidgetController
 {
 
     /**

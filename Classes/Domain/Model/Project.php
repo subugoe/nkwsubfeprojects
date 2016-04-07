@@ -143,12 +143,12 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $freekeywords;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $leadperson
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $leadperson
      */
     protected $leadperson;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $person
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $person
      */
     protected $person;
 
@@ -174,32 +174,23 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * The constructor of this Project
-     *
-     * @return void
      */
     public function __construct()
     {
-        //Do not remove the next line: It would break the functionality
         $this->initStorageObjects();
     }
 
     /**
-     * Initializes all Tx_Extbase_Persistence_ObjectStorage properties.
+     * Initializes all ObjectStorage properties.
      *
      * @return void
      */
     protected function initStorageObjects()
     {
-
-        $this->schulungTermine = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
-
-    /**
-     * @return string
-     */
-    public function getAcronym()
-    {
-        return $this->acronym;
+        $this->department = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->person = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->leadperson = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->keywords = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -213,9 +204,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getBlacklisted()
+    public function getAcronym()
     {
-        return $this->blacklisted;
+        return $this->acronym;
     }
 
     /**
@@ -227,11 +218,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Group>
+     * @return string
      */
-    public function getDepartment()
+    public function getBlacklisted()
     {
-        return $this->department;
+        return $this->blacklisted;
     }
 
     /**
@@ -243,11 +234,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Group>
      */
-    public function getDescr()
+    public function getDepartment()
     {
-        return $this->descr;
+        return $this->department;
     }
 
     /**
@@ -261,9 +252,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getEhemalige()
+    public function getDescr()
     {
-        return $this->ehemalige;
+        return $this->descr;
     }
 
     /**
@@ -277,9 +268,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getFreekeywords()
+    public function getEhemalige()
     {
-        return $this->freekeywords;
+        return $this->ehemalige;
     }
 
     /**
@@ -291,11 +282,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
+     * @return string
      */
-    public function getFunding()
+    public function getFreekeywords()
     {
-        return $this->funding;
+        return $this->freekeywords;
     }
 
     /**
@@ -307,11 +298,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
      */
-    public function getFundingtimeend()
+    public function getFunding()
     {
-        return $this->fundingtimeend + 3600;
+        return $this->funding;
     }
 
     /**
@@ -325,9 +316,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getFundingtimestart()
+    public function getFundingtimeend()
     {
-        return $this->fundingtimestart + 3600;
+        return $this->fundingtimeend + 3600;
     }
 
     /**
@@ -341,9 +332,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getImages()
+    public function getFundingtimestart()
     {
-        return $this->images;
+        return $this->fundingtimestart + 3600;
     }
 
     /**
@@ -355,11 +346,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
+     * @return string
      */
-    public function getInstitutions()
+    public function getImages()
     {
-        return $this->institutions;
+        return $this->images;
     }
 
     /**
@@ -371,11 +362,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
      */
-    public function getInternalnotes()
+    public function getInstitutions()
     {
-        return $this->internalnotes;
+        return $this->institutions;
     }
 
     /**
@@ -387,11 +378,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords>
+     * @return string
      */
-    public function getKeywords()
+    public function getInternalnotes()
     {
-        return $this->keywords;
+        return $this->internalnotes;
     }
 
     /**
@@ -403,11 +394,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords>
      */
-    public function getLeadinstitution()
+    public function getKeywords()
     {
-        return $this->leadinstitution;
+        return $this->keywords;
     }
 
     /**
@@ -419,15 +410,15 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Institution>
      */
-    public function getLeadperson()
+    public function getLeadinstitution()
     {
-        return $this->leadperson;
+        return $this->leadinstitution;
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $leadperson
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $leadperson
      */
     public function setLeadperson($leadperson)
     {
@@ -435,11 +426,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person>
      */
-    public function getNotes()
+    public function getLeadperson()
     {
-        return $this->notes;
+        return $this->leadperson;
     }
 
     /**
@@ -451,15 +442,15 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person>
+     * @return string
      */
-    public function getPerson()
+    public function getNotes()
     {
-        return $this->person;
+        return $this->notes;
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $person
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $person
      */
     public function setPerson($person)
     {
@@ -467,11 +458,11 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person>
      */
-    public function getRunningtimeend()
+    public function getPerson()
     {
-        return $this->runningtimeend + 3600;
+        return $this->person;
     }
 
     /**
@@ -485,9 +476,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getRunningtimestart()
+    public function getRunningtimeend()
     {
-        return $this->runningtimestart + 3600;
+        return $this->runningtimeend + 3600;
     }
 
     /**
@@ -501,9 +492,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getStatus()
+    public function getRunningtimestart()
     {
-        return $this->status;
+        return $this->runningtimestart + 3600;
     }
 
     /**
@@ -517,9 +508,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getTitle()
+    public function getStatus()
     {
-        return $this->title;
+        return $this->status;
     }
 
     /**
@@ -533,25 +524,24 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getUrl1()
+    public function getTitle()
     {
-        return $this->url1;
+        return $this->title;
     }
 
-    /**
-     * @param string $url1
-     */
-    public function setUrl1($url1)
-    {
-        $this->url1 = $url1;
-    }
+	/**
+	 * @param string $url1
+	 */
+	public function setUrl1($url1) {
+		$this->url1 = $url1;
+	}
 
     /**
      * @return string
      */
-    public function getUrl2()
+    public function getUrl1()
     {
-        return $this->url2;
+        return $this->url1;
     }
 
     /**
@@ -565,9 +555,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getUrl3()
+    public function getUrl2()
     {
-        return $this->url3;
+        return $this->url2;
     }
 
     /**
@@ -581,9 +571,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getUrl4()
+    public function getUrl3()
     {
-        return $this->url4;
+        return $this->url3;
     }
 
     /**
@@ -597,9 +587,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getUrl5()
+    public function getUrl4()
     {
-        return $this->url5;
+        return $this->url4;
     }
 
     /**
@@ -613,9 +603,9 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @return string
      */
-    public function getSubtitle()
+    public function getUrl5()
     {
-        return $this->subtitle;
+        return $this->url5;
     }
 
     /**
@@ -624,6 +614,14 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setSubtitle($subtitle)
     {
         $this->subtitle = $subtitle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubtitle()
+    {
+        return $this->subtitle;
     }
 
     /**

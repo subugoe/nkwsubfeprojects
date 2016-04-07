@@ -25,12 +25,14 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Subugoe\Nkwsubfeprojects\Service\AssetService;
 
 /**
  * Project Controller
  */
-class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ProjectController extends ActionController
 {
 
     /**
@@ -41,9 +43,8 @@ class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
     public function initializeAction()
     {
-        /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-        $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
+        $assetService = $this->objectManager->get(AssetService::class);
+        $assetService->includeCss($this->settings);
     }
 
     /**

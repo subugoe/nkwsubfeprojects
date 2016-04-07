@@ -17,7 +17,7 @@
 
 	<f:if condition="{institution.address}">
 		<f:then>
-			<h3><f:translate key="address"/></h3>
+			<h3><f:translate key="{address}"/></h3>
 			<f:format.html>{institution.address}</f:format.html>
 		</f:then>
 	</f:if>
@@ -31,7 +31,5 @@
 
 	<h2><f:translate key="projects"/></h2>
 	<f:render partial="ProjectLink" arguments="{projects: projects}" />
-
-	<f:render partial="KeywordSidebar" arguments="{_all}" />
 
 </f:section>
