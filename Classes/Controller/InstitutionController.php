@@ -26,23 +26,23 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository;
 use Subugoe\Nkwsubfeprojects\Service\AssetService;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Controller for Institution Data
  */
-class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class InstitutionController extends ActionController
 {
 
     /**
      * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository
-     * @inject
      */
     protected $institutionRepostitory;
 
     /**
      * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
-     * @inject
      */
     protected $projectRepository;
 
@@ -50,6 +50,22 @@ class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     {
         $assetService = $this->objectManager->get(AssetService::class);
         $assetService->includeCss($this->settings);
+    }
+
+    /**
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository
+     */
+    public function injectProjectRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository)
+    {
+        $this->projectRepository = $projectRepository;
+    }
+
+    /**
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository $institutionRepository
+     */
+    public function injectInstitutionRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository $institutionRepository)
+    {
+        $this->institutionRepostitory = $institutionRepository;
     }
 
     /**
@@ -66,7 +82,6 @@ class InstitutionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      */
     public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Institution $institution)
     {
-
         $projects = $this->projectRepository->findAllInstitutions($institution);
 
         $this->view->assign('institution', $institution);

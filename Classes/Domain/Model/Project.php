@@ -25,11 +25,12 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Project model
  */
-class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Project extends AbstractEntity
 {
 
     /**
@@ -183,7 +184,6 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Initializes all ObjectStorage properties.
      *
-     * @return void
      */
     protected function initStorageObjects()
     {
@@ -640,5 +640,4 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->fundingsum = $fundingsum;
     }
-
 }

@@ -25,15 +25,15 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository Class for Address Groups as mapped by tt_address
  */
-class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class GroupRepository extends Repository
 {
 
     protected $defaultOrderings = [
         'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
     ];
-
 }

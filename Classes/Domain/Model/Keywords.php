@@ -25,11 +25,12 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Model for Project Keywords
  */
-class Keywords extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Keywords extends AbstractEntity
 {
 
     /**
@@ -53,5 +54,4 @@ class Keywords extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->title;
     }
-
 }

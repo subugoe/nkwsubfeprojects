@@ -8,7 +8,7 @@ plugin.tx_nkwsubfeprojects {
 			Subugoe\Substaff\Domain\Model\Person {
 				mapping {
 					tableName = tt_address
-					recordType = Tx_Substaff_Domain_Model_Person
+					recordType = Subugoe\Substaff\Domain\Model\Person
 					columns {
 						first_name = firstName
 						last_name = lastName
@@ -20,7 +20,7 @@ plugin.tx_nkwsubfeprojects {
 			Subugoe\Nkwsubfeprojects\Domain\Model\Group {
 				mapping {
 					tableName = tt_address_group
-					recordType = Tx_Nkwsubfeprojects_Domain_Model_Group
+					recordType = Subugoe\Nkwsubfeprojects\Domain\Model\Group
 					columns {
 						title = title
 					}
@@ -29,7 +29,7 @@ plugin.tx_nkwsubfeprojects {
 			Subugoe\Nkwsubfeprojects\Domain\Model\Project {
 				mapping {
 					tableName = tx_nkwsubfeprojects_domain_model_project
-					recordType = Tx_Nkwsubfeprojects_Domain_Model_Project
+					recordType = Subugoe\Nkwsubfeprojects\Domain\Model\Project
 					columns {
 						title = title
 					}

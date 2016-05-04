@@ -25,11 +25,12 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository Class for Keywords
  */
-class KeywordsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class KeywordsRepository extends Repository
 {
 
     /**
@@ -40,5 +41,4 @@ class KeywordsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     protected $defaultOrderings = [
         'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
     ];
-
 }
