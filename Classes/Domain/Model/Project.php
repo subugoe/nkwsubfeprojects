@@ -143,12 +143,12 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $freekeywords;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $leadperson
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $leadperson
      */
     protected $leadperson;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $person
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $person
      */
     protected $person;
 
@@ -418,7 +418,7 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $leadperson
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $leadperson
      */
     public function setLeadperson($leadperson)
     {
@@ -426,7 +426,7 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person>
      */
     public function getLeadperson()
     {
@@ -450,7 +450,7 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person> $person
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person> $person
      */
     public function setPerson($person)
     {
@@ -458,7 +458,7 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Substaff\Domain\Model\Person>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Subugoe\Nkwsubfeprojects\Domain\Model\Person>
      */
     public function getPerson()
     {
