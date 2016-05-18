@@ -25,20 +25,15 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
-use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Repository Class for Keywords
+ * Repository Class for Persons as mapped by tt_address
  */
-class KeywordsRepository extends Repository
+class PersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    /**
-     * Set default Orderings of Query Results
-     *
-     * @var array
-     */
-    protected $defaultOrderings = [
-        'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-    ];
+    protected $defaultOrderings = array(
+        'lastName' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+    );
+
 }

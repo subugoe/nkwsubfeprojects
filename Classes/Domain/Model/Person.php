@@ -25,19 +25,59 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Model for Project Keywords
+ * Model for Persons as mapped by tt_address table
  */
-class Keywords extends AbstractEntity
+class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+
+    /**
+     * @var string
+     */
+    protected $firstName;
+
+    /**
+     * @var string
+     */
+    protected $lastName;
 
     /**
      * @var string
      */
     protected $title;
 
+    /**
+     * @param string $firstName
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @param string $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
 
     /**
      * @param string $title
@@ -54,4 +94,5 @@ class Keywords extends AbstractEntity
     {
         return $this->title;
     }
+
 }

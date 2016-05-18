@@ -25,11 +25,12 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Institution Model
  */
-class Institution extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Institution extends AbstractEntity
 {
 
     /**

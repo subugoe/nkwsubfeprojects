@@ -48,13 +48,19 @@ class ProjectController extends ActionController
     }
 
     /**
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository
+     */
+    public function injectProjectRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository)
+    {
+        $this->projectRepository = $projectRepository;
+    }
+
+    /**
      * List all Projects and link them to a single one
      *
-     * @return void
      */
     public function listAction()
     {
-
         if ($this->settings['listtype'] === 'x') {
             $projects = $this->projectRepostitory->findAll();
         } else {
@@ -71,7 +77,6 @@ class ProjectController extends ActionController
      */
     public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Project $project)
     {
-
         $newHeader = $project->getTitle() . ' - ' . $this->configurationManager->getContentObject()->data['header'];
         // Assign new pageTitle
         $GLOBALS['TSFE']->page['title'] = $newHeader;
@@ -79,5 +84,4 @@ class ProjectController extends ActionController
         $this->view->assign('header', $newHeader);
         $this->view->assign('project', $project);
     }
-
 }

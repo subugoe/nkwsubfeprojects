@@ -36,13 +36,11 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     /**
      * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository
-     * @inject
      */
     protected $keywordsRepository;
 
     /**
      * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
-     * @inject
      */
     protected $projectRepository;
 
@@ -51,6 +49,19 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
         $assetService = $this->objectManager->get(AssetService::class);
         $assetService->includeCss($this->settings);
+    }
+
+    public function injectKeywordsRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository $keywordsRepository)
+    {
+        $this->keywordsRepository = $keywordsRepository;
+    }
+
+    /**
+     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository
+     */
+    public function injectProjectRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository)
+    {
+        $this->projectRepository = $projectRepository;
     }
 
     /**
@@ -69,7 +80,6 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function detailAction(\Subugoe\Nkwsubfeprojects\Domain\Model\Keywords $keyword)
     {
-
         $newHeader = $this->configurationManager->getContentObject()->data['header'] . ' ' . $keyword->getTitle();
 
         $projects = $this->projectRepository->findProjectByKeywords($keyword);

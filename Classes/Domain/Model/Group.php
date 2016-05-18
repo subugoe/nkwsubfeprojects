@@ -25,11 +25,12 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Model for Groups as mapped by tt_address table
  */
-class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Group extends AbstractEntity
 {
 
     /**

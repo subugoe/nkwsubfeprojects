@@ -25,7 +25,9 @@ namespace Subugoe\Nkwsubfeprojects\Service;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Asset handling
@@ -34,12 +36,10 @@ class AssetService
 {
     public function includeCss($settings)
     {
-
         if (isset($settings['includeCSS']) && intval($settings['includeCSS']) === 1) {
             /** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-            $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+            $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
             $pageRenderer->addCssFile(ExtensionManagementUtility::siteRelPath('nkwsubfeprojects') . 'Resources/Public/Css/nkwsubfeprojects.css');
         }
     }
-
 }

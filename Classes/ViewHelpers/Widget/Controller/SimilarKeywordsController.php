@@ -56,24 +56,21 @@ class SimilarKeywordsController extends AbstractWidgetController
     protected $exclude;
 
     /**
-     * @return void
      */
     public function initializeAction()
     {
         $this->objects = $this->widgetConfiguration['objects'];
         $this->exclude = $this->widgetConfiguration['exclude'];
         \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule($this->configuration,
-            $this->widgetConfiguration['configuration'], TRUE);
+            $this->widgetConfiguration['configuration'], true);
     }
 
     /**
      * Generate titles, indexes and assign this to the view
      *
-     * @return void
      */
     public function indexAction()
     {
-
         $groupings = $this->flattenList($this->objects);
         $this->view->assignMultiple(
             [
@@ -93,7 +90,6 @@ class SimilarKeywordsController extends AbstractWidgetController
      */
     protected function flattenList($objects)
     {
-
         $key = [];
 
         foreach ($objects as $object) {

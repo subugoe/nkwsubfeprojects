@@ -5,10 +5,10 @@ plugin.tx_nkwsubfeprojects {
 
 	persistence {
 		classes {
-			Subugoe\Substaff\Domain\Model\Person {
+			Subugoe\Nkwsubfeprojects\Domain\Model\Person {
 				mapping {
 					tableName = tt_address
-					recordType = Tx_Substaff_Domain_Model_Person
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Person
 					columns {
 						first_name = firstName
 						last_name = lastName

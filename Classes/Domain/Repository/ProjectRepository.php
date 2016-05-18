@@ -25,11 +25,12 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository Class for Projects
  */
-class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class ProjectRepository extends Repository
 {
 
     protected $defaultOrderings = [
@@ -44,7 +45,6 @@ class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      */
     public function findAllInstitutions($institution)
     {
-
         $query = $this->createQuery();
 
         $result = $query->matching(
@@ -76,5 +76,4 @@ class ProjectRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         return $result;
     }
-
 }

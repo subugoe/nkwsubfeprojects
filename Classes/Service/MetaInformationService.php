@@ -47,7 +47,6 @@ class MetaInformationService
      */
     public function getMetaInformation(&$content, &$submenu)
     {
-
         $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
 
         if (GeneralUtility::_GP('tx_nkwsubfeprojects_pi2')) {
@@ -61,7 +60,6 @@ class MetaInformationService
         if (GeneralUtility::_GP('tx_nkwsubfeprojects_pi4')) {
             $content = $this->getKeywordDetails();
         }
-
     }
 
     /**
@@ -125,7 +123,5 @@ class MetaInformationService
 
         $content = $template->render();
         return $content;
-
     }
-
 }
