@@ -5,10 +5,10 @@ plugin.tx_nkwsubfeprojects {
 
 	persistence {
 		classes {
-			Subugoe\Substaff\Domain\Model\Person {
+			Subugoe\Nkwsubfeprojects\Domain\Model\Person {
 				mapping {
 					tableName = tt_address
-					recordType = Subugoe\Substaff\Domain\Model\Person
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Person
 					columns {
 						first_name = firstName
 						last_name = lastName
@@ -20,7 +20,7 @@ plugin.tx_nkwsubfeprojects {
 			Subugoe\Nkwsubfeprojects\Domain\Model\Group {
 				mapping {
 					tableName = tt_address_group
-					recordType = Subugoe\Nkwsubfeprojects\Domain\Model\Group
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Group
 					columns {
 						title = title
 					}
@@ -29,7 +29,7 @@ plugin.tx_nkwsubfeprojects {
 			Subugoe\Nkwsubfeprojects\Domain\Model\Project {
 				mapping {
 					tableName = tx_nkwsubfeprojects_domain_model_project
-					recordType = Subugoe\Nkwsubfeprojects\Domain\Model\Project
+					recordType = Tx_Nkwsubfeprojects_Domain_Model_Project
 					columns {
 						title = title
 					}
