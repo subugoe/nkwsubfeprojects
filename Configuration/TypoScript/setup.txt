@@ -45,4 +45,6 @@ plugin.tx_nkwsubfeprojects {
 	settings {
 		includeCSS = 1
 	}
+
+	mvc.callDefaultActionIfActionCantBeResolved = 1
 }
