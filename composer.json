@@ -1,0 +1,17 @@
+{
+    "name": "subugoe/nkwsubfeprojects",
+    "description": "SUB Göttingen Project Database",
+    "license": "GPLv2",
+    "type": "typo3-cms-extension",
+    "authors": [
+        {
+            "name": "Ingo Pfennigstorf",
+            "email": "pfennigstorf@sub.uni-goettingen.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Subugoe\\Nkwsubfeprojects\\": "Classes/"
+        }
+    }
+}
