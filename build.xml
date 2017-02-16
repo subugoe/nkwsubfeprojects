@@ -36,7 +36,6 @@
 				<antcall target="phpmd"/>
 			</sequential>
 			<antcall target="phpcpd"/>
-			<antcall target="phpcs"/>
 			<antcall target="phpdox"/>
 			<antcall target="phploc"/>
 		</parallel>
@@ -71,15 +70,6 @@
 		<exec executable="phploc">
 			<arg value="--log-csv"/>
 			<arg value="${basedir}/build/logs/phploc.csv"/>
-			<arg path="${basedir}/"/>
-		</exec>
-	</target>
-	<target name="phpcs"
-			description="Find coding standard violations using PHP_CodeSniffer">
-		<exec executable="phpcs" output="/dev/null">
-			<arg value="--report=checkstyle"/>
-			<arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
-			<arg value="--standard=${basedir}/build/phpcs.xml"/>
 			<arg path="${basedir}/"/>
 		</exec>
 	</target>
