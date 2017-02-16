@@ -39,7 +39,6 @@ class SimilarKeywordsViewHelper extends AbstractWidgetViewHelper
     protected $controller;
 
     /**
-     *
      * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
      * @param int $exclude
      * @param array $configuration

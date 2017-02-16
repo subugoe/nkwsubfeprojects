@@ -53,18 +53,14 @@ class InstitutionController extends ActionController
     }
 
     /**
-     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository
-     */
-    public function injectProjectRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository)
-    {
-        $this->projectRepository = $projectRepository;
-    }
-
-    /**
+     * InstitutionController constructor.
+     * @param ProjectRepository $projectRepository
      * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository $institutionRepository
      */
-    public function injectInstitutionRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository $institutionRepository)
+    public function __construct(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository, \Subugoe\Nkwsubfeprojects\Domain\Repository\InstitutionRepository $institutionRepository)
     {
+        parent::__construct();
+        $this->projectRepository = $projectRepository;
         $this->institutionRepostitory = $institutionRepository;
     }
 

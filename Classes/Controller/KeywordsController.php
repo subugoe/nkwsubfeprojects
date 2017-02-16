@@ -26,6 +26,8 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository;
+use Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository;
 use Subugoe\Nkwsubfeprojects\Service\AssetService;
 
 /**
@@ -50,16 +52,16 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $assetService->includeCss($this->settings);
     }
 
-    public function injectKeywordsRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\KeywordsRepository $keywordsRepository)
-    {
-        $this->keywordsRepository = $keywordsRepository;
-    }
-
     /**
-     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository
+     * KeywordsController constructor.
+     * @param KeywordsRepository $keywordsRepository
+     * @param ProjectRepository $projectRepository
      */
-    public function injectProjectRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository)
+    public function __construct(KeywordsRepository $keywordsRepository, ProjectRepository $projectRepository)
     {
+        parent::__construct();
+
+        $this->keywordsRepository = $keywordsRepository;
         $this->projectRepository = $projectRepository;
     }
 

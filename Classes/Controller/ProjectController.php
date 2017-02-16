@@ -26,6 +26,7 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository;
 use Subugoe\Nkwsubfeprojects\Service\AssetService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -37,7 +38,6 @@ class ProjectController extends ActionController
 
     /**
      * @var \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository
-     * @inject
      */
     protected $projectRepostitory;
 
@@ -48,10 +48,13 @@ class ProjectController extends ActionController
     }
 
     /**
-     * @param \Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository
+     * ProjectController constructor.
+     * @param ProjectRepository $projectRepository
      */
-    public function injectProjectRepository(\Subugoe\Nkwsubfeprojects\Domain\Repository\ProjectRepository $projectRepository)
+    public function __construct(ProjectRepository $projectRepository)
     {
+        parent::__construct();
+
         $this->projectRepository = $projectRepository;
     }
 
