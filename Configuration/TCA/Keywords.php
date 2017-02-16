@@ -30,7 +30,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_nkwsubfeprojects_keywords',
+                'foreign_table' => 'tx_nkwsubfeprojects_domain_model_keywords',
                 'foreign_table_where' => 'AND tx_nkwsubfeprojects_domain_model_keywords.pid=###CURRENT_PID### AND tx_nkwsubfeprojects_domain_model_keywords.sys_language_uid IN (-1,0)',
             ],
         ],
@@ -54,7 +54,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_keywords.title_de',
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_keywords.title',
             'config' => ['type' => 'input', 'size' => '30', 'eval' => 'required,trim']
         ],
     ],

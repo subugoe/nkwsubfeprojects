@@ -44,7 +44,6 @@ class KeywordsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     protected $projectRepository;
 
-
     public function initializeAction()
     {
         $assetService = $this->objectManager->get(AssetService::class);

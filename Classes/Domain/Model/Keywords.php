@@ -38,7 +38,6 @@ class Keywords extends AbstractEntity
      */
     protected $title;
 
-
     /**
      * @param string $title
      */

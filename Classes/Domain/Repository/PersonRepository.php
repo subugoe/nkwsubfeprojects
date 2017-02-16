@@ -31,9 +31,7 @@ namespace Subugoe\Nkwsubfeprojects\Domain\Repository;
  */
 class PersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
-    protected $defaultOrderings = array(
+    protected $defaultOrderings = [
         'lastName' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
-    );
-
+    ];
 }

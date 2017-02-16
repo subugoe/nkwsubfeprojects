@@ -71,7 +71,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_institution'] = [
         'enablecolumns' => ['disabled' => 'hidden'],
         'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Institution.php',
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/icon_tx_nkwsubfeprojects_domain_model_institution.gif',
-        'searchFields' => 'title_de, acronym, title'
+        'searchFields' => 'title, acronym, title'
     ]
 ];
 $TCA['tx_nkwsubfeprojects_domain_model_keywords'] = [

@@ -6,3 +6,4 @@
 .svn
 .sass-cache/
 /node_modules
+/.php_cs.cache

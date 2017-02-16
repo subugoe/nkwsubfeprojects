@@ -1,30 +1,5 @@
 <?php
 
-/* * *************************************************************
- *  Copyright notice
- *
- *  (c) 2012 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>
- *      Goettingen State Library
- *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- * ************************************************************* */
-
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
@@ -46,6 +21,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
             'label' => 'LLL:EXT:lang/locallang_general.php:LGL.language',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
@@ -87,12 +63,12 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.title_de',
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.title',
             'config' => ['type' => 'input', 'size' => '30', 'eval' => 'required,trim']
         ],
         'subtitle' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.subtitle_de',
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.subtitle',
             'config' => ['type' => 'text', 'cols' => '30', 'rows' => '2']
         ],
         'acronym' => [
@@ -102,7 +78,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
         ],
         'descr' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.descr_de',
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.descr',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',
@@ -115,7 +91,9 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
                         'type' => 'script',
                         'title' => 'Full screen Rich Text Editing|Formatteret redigering i hele vinduet',
                         'icon' => 'wizard_rte2.gif',
-                        'script' => 'wizard_rte.php',
+                        'module' => [
+                            'name' => 'wizard_rte'
+                        ],
                     ],
                 ],
             ]
@@ -198,6 +176,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [
                     [
                         'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.status.I.0',
@@ -240,13 +219,21 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
         ],
         'notes' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.notes_de',
-            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.notes',
+            'config' => [
+                'type' => 'text',
+                'cols' => '30',
+                'rows' => '5'
+            ]
         ],
         'internalnotes' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.internalnotes_de',
-            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.internalnotes',
+            'config' => [
+                'type' => 'text',
+                'cols' => '30',
+                'rows' => '5'
+            ]
         ],
         'funding' => [
             'exclude' => 0,
@@ -311,14 +298,19 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
         ],
         'freekeywords' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.freekeywords_de',
-            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+            'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.freekeywords',
+            'config' => [
+                'type' => 'text',
+                'cols' => '30',
+                'rows' => '5'
+            ]
         ],
         'leadperson' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.leadperson',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tt_address',
                 'foreign_table_where' => ' ORDER BY tt_address.last_name ASC',
                 'size' => 5,
@@ -340,6 +332,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.person',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tt_address',
                 'foreign_table_where' => ' ORDER BY tt_address.last_name ASC',
                 'size' => 5,
@@ -361,6 +354,7 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.department',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tt_address_group',
                 'foreign_table_where' => ' ORDER BY tt_address_group.title ASC',
                 'size' => 5,
@@ -385,7 +379,11 @@ $TCA['tx_nkwsubfeprojects_domain_model_project'] = [
         'ehemalige' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:nkwsubfeprojects/Resources/Private/Language/locallang_db.xml:tx_nkwsubfeprojects_domain_model_project.ehemalige',
-            'config' => ['type' => 'text', 'cols' => '30', 'rows' => '5']
+            'config' => [
+                'type' => 'text',
+                'cols' => '30',
+                'rows' => '5'
+            ]
         ]
     ],
 ];

@@ -26,8 +26,8 @@ namespace Subugoe\Nkwsubfeprojects\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Subugoe\Nkwsubfeprojects\Service\AssetService;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Project Controller
